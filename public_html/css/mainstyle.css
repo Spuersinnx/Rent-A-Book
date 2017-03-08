@@ -86,7 +86,7 @@ footer {
 }
 
 #footer-info {
+    font-size: small;
     width: auto;
-    float: left;
     margin-top: 10px;
 }
