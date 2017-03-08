@@ -1,0 +1,76 @@
+header {
+    height: 120px;
+}
+
+header h1 {
+    float: left;
+    margin-top: 40px;
+}
+
+header h1 .color {
+    font-family: 'Crete Round', serif;
+    color: #02b8dd;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul li {
+    float: left;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+header nav ul li a {
+    color: #444;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin-right: 20px;
+}
+
+#bookshelf-image {
+    height: 580px;
+    width: auto;
+    padding-top: 1px;
+    background: url("../img/content/bookshelf.jpeg") no-repeat center;
+    opacity: 0.8;
+}
+
+#bookshelf-image h2 {
+    margin: 180px 0 40px 0;
+}
+
+#perks ul {
+    margin: 80px 0;
+}
+
+#perks ul li {
+    width: 300px;
+    padding-top: 140px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    list-style: none;
+}
+
+#perks ul li.perk-1 {
+    background: url('../img/content/quill.png') no-repeat top center;
+}
+
+#perks ul li.perk-2 {
+    background: url('../img/content/network.png') no-repeat top center;
+}
+
+#perks ul li.perk-3 {
+    background: url('../img/content/library.png') no-repeat top center;
+
+}
+
+
+
+
+
+
+
