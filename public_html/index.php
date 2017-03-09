@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="#" onclick="document.getElementById('modalLogin').style.display='block'">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="#" onclick="document.getElementById('modalSignup').style.display='block'">Sign Up</a></li>
             </ul>
         </nav>
     </div>
@@ -61,14 +61,43 @@
             <span class="close" onclick="document.getElementById('modalLogin').style.display='none'"><img src="img/layout/cross-out.png"></span>
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="username" required>
 
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
 
             <button type="submit" class="loginButton">Login</button>
 
+            <button type="button" class="cancelButton" onclick="document.getElementById('modalLogin').style.display='none'">Cancel</button>
 
+        </div>
+    </form>
+</div>
+
+<!--Modal Sign Up Box-->
+<div id="modalSignup" class="modal">
+
+    <!--Modal Content -->
+    <form class="modal-content animate">
+        <div class="container">
+            <span class="close" onclick="document.getElementById('modalSignup').style.display='none'"><img src="img/layout/cross-out.png"></span>
+
+            <label><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="newfirstName" required>
+
+            <label><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="newLastName" required>
+
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="newUsername" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="newPsw" required>
+
+            <label><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="confirmPsw" required>
+
+            <button type="submit" class="loginButton">Sign Up</button>
             <button type="button" class="cancelButton" onclick="document.getElementById('modalLogin').style.display='none'">Cancel</button>
 
         </div>
@@ -77,7 +106,6 @@
 
 
 <script>
-
     //Get the modal
     var modal = document.getElementById('modalLogin');
 
