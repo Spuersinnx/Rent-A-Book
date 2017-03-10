@@ -2,11 +2,13 @@
 ?>
 
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Rent a Book</title>
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/passwordStrength.js"></script>
 
 </head>
 
@@ -101,7 +103,7 @@
             <input type="password" placeholder="Enter Password" name="newPsw" required>
 
             <div id="pswdInfo">
-                <h4>Password must meet the following requirements:</h4>
+                <h5>Password must meet the following requirements:</h5>
                 <ul>
                     <li id="letter" class="invalid">At least <strong>one letter</strong></li>
                     <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
@@ -125,27 +127,20 @@
 <script>
     //Get the modal
     var modal = document.getElementById('modalLogin');
+    var modalS = document.getElementById('modalSignup');
 
     //user clicks anywhere outside of the modal, close modal
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
-</script>
-
-<!--Script to close modal when clicking outside of modal-->
-<script>
-    //Get the modal
-    var modal = document.getElementById('modalSignup');
-
-    //user clicks anywhere outside of the modal, close modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == modalS) {
+            modalS.style.display = "none";
         }
     }
+
 </script>
+
 
 <footer>
     <div class="wrapper">

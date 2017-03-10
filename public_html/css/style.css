@@ -56,11 +56,12 @@ header nav ul li a {
 .close {
     position: absolute;
     right: 25%;
-    top: 25%;
+    top: 200px;
     color: white;
     font-size: 30px;
     font-weight: normal;
     cursor: pointer;
+
 }
 
 .container {
@@ -150,7 +151,7 @@ input[type=text], input[type=password] {
 
 #pswdInfo {
     position:absolute;
-    right:25px;
+    right: 250px;
     width:250px;
     padding:15px;
     background:#fefefe;
@@ -158,6 +159,7 @@ input[type=text], input[type=password] {
     border-radius:5px;
     box-shadow:0 1px 3px #ccc;
     border:1px solid #ddd;
+    display: none;
 }
 
 #pswdInfo ul {
