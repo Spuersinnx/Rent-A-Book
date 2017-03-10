@@ -55,10 +55,11 @@ header nav ul li a {
 
 .close {
     position: absolute;
-    right: 360px;
-    color: #000;
+    right: 25%;
+    top: 25%;
+    color: white;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer;
 }
 
@@ -145,8 +146,49 @@ input[type=text], input[type=password] {
 
 #perks ul li.perk-3 {
     background: url('../img/content/library.png') no-repeat top center;
-
 }
+
+#pswdInfo {
+    position:absolute;
+    right:25px;
+    width:250px;
+    padding:15px;
+    background:#fefefe;
+    font-size:.875em;
+    border-radius:5px;
+    box-shadow:0 1px 3px #ccc;
+    border:1px solid #ddd;
+}
+
+#pswdInfo ul {
+    list-style-type: none;
+}
+
+#pswdInfo::before {
+    content: "\25B2";
+    position:absolute;
+    top:-12px;
+    left:45%;
+    font-size:14px;
+    line-height:14px;
+    color:#ddd;
+    text-shadow:none;
+    display:block;
+}
+
+.invalid {
+    background: url('../img/content/invalid.png') no-repeat;
+    padding-left: 20px;
+    line-height: 22px;
+}
+
+.valid {
+    background: url('../img/content/valid.png') no-repeat;
+    padding-left: 20px;
+    line-height: 22px;
+}
+
+
 
 
 

@@ -6,8 +6,8 @@
 <head>
     <title>Rent a Book</title>
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
-
     <link type="text/css" rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -58,10 +58,11 @@
 <!--Modal Content-->
     <form class="modal-content animate">
         <div class="container">
-            <span class="close" onclick="document.getElementById('modalLogin').style.display='none'"><img src="img/layout/cross-out.png"></span>
+            <span class="close" onclick="document.getElementById('modalLogin').style.display='none'">x</span>
 
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
+
 
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
@@ -74,28 +75,44 @@
     </form>
 </div>
 
+
 <!--Modal Sign Up Box-->
 <div id="modalSignup" class="modal">
 
     <!--Modal Content -->
-    <form class="modal-content animate">
-        <div class="container">
-            <span class="close" onclick="document.getElementById('modalSignup').style.display='none'"><img src="img/layout/cross-out.png"></span>
+    <form class="modal-content animate" action="signUp.php" method="post">
+        <div id="register" class="container">
+            <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
             <label><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="newfirstName" required>
+            <input type="text" placeholder="Enter First Name" name="newFirstName" required>
 
             <label><b>Last Name</b></label>
             <input type="text" placeholder="Enter Last Name" name="newLastName" required>
 
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="newEmail" required>
+
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="newUsername" required>
+
 
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="newPsw" required>
 
+            <div id="pswdInfo">
+                <h4>Password must meet the following requirements:</h4>
+                <ul>
+                    <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                    <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                    <li id="number" class="invalid">At least <strong>one number</strong></li>
+                    <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+                </ul>
+            </div>
+
             <label><b>Confirm Password</b></label>
             <input type="password" placeholder="Confirm Password" name="confirmPsw" required>
+
 
             <button type="submit" class="loginButton">Sign Up</button>
             <button type="button" class="cancelButton" onclick="document.getElementById('modalLogin').style.display='none'">Cancel</button>
@@ -104,10 +121,23 @@
     </form>
 </div>
 
-
+<!--Script to close modal when clicking outside of modal-->
 <script>
     //Get the modal
     var modal = document.getElementById('modalLogin');
+
+    //user clicks anywhere outside of the modal, close modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<!--Script to close modal when clicking outside of modal-->
+<script>
+    //Get the modal
+    var modal = document.getElementById('modalSignup');
 
     //user clicks anywhere outside of the modal, close modal
     window.onclick = function(event) {
