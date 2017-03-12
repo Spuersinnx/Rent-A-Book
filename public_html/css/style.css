@@ -162,6 +162,35 @@ input[type=text], input[type=password] {
     display: none;
 }
 
+#errFirstN {
+    display: none;
+}
+
+#errFirstN ul {
+    font-size: .875em;
+    list-style-type: none;
+    padding: inherit;
+}
+
+#errLastN {
+    display: none;
+}
+
+#errLastN ul {
+    font-size: .875em;
+    list-style-type: none;
+    padding: inherit;
+}
+
+#errUsername {
+    display: none;
+}
+
+#errUsername ul {
+    font-size: .875em;
+    list-style-type: none;
+    padding: inherit;
+}
 
 #errorEmailDiv {
     display: none;

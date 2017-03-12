@@ -10,23 +10,73 @@ $(document).ready(function() {
 
 function validateForm() {
 
-
-    $('#confirmPsw').keyup(function() {
-        var password=document.getElementById('newPsw').value;
-        var confirmPassword = document.getElementById('confirmPsw').value;
-
-        //validate confirmed password matches initial password
-        if(confirmPassword != password) {
-            $('#match').removeClass('valid').addClass('invalid');
+    //first name validation
+    $('#newFirstName').on('input',function() {
+        var firstName = $('#newFirstName').val();
+        if (firstName == "") {
+            $('#errFirstNInfo').removeClass('valid').addClass('invalid');
         }
         else {
+            $('#errFirstNInfo').removeClass('invalid').addClass('valid');
+        }
+
+    }).focus(function () {
+        $('#errFirstN').show();
+    }).blur(function () {
+        $('#errFirstN').hide();
+    });
+
+    //last name validation
+    $('#newLastName').on('input',function() {
+        var firstName = $('#newLastName').val();
+        if (firstName == "") {
+            $('#errLastNInfo').removeClass('valid').addClass('invalid');
+        }
+        else {
+            $('#errLastNInfo').removeClass('invalid').addClass('valid');
+        }
+
+    }).focus(function () {
+        $('#errLastN').show();
+    }).blur(function () {
+        $('#errLastN').hide();
+    });
+
+
+    //username validation
+    $('#newUsername').on('input',function() {
+        var firstName = $('#newUsername').val();
+        if (firstName == "") {
+            $('#errUserNInfo').removeClass('valid').addClass('invalid');
+        }
+        else {
+            $('#errUserNInfo').removeClass('invalid').addClass('valid');
+        }
+
+    }).focus(function () {
+        $('#errUsername').show();
+    }).blur(function () {
+        $('#errUsername').hide();
+    });
+
+    //password validation
+    $('#confirmPsw').keyup(function() {
+        var password=$('#newPsw').val();
+        var confirmPassword = $('#confirmPsw').val();
+
+        //validate confirmed password matches initial password
+        if(confirmPassword = password) {
             $('#match').removeClass('invalid').addClass('valid');
+        }
+        else {
+            $('#match').removeClass('valid').addClass('invalid');
         }
 
     });
 
+    //email validation
     $('#newEmail').keyup(function() {
-        var email=document.getElementById('newEmail').value;
+        var email=$('#newEmail').val();
         var emailRegex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
 
         //validate email matches regex
@@ -45,6 +95,7 @@ function validateForm() {
 
 
 }
+
 
 function strengthPassword() {
 

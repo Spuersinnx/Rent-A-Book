@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/passwordStrength.js"></script>
+    <script src="js/formValidation.js"></script>
 
 </head>
 
@@ -90,9 +90,19 @@
 
             <label><b>First Name</b></label>
             <input type="text" placeholder="Enter First Name" id="newFirstName" name="newFirstName" required>
+            <div id="errFirstN">
+                <ul>
+                    <li id="errFirstNInfo" class="invalid">Please enter your first name</li>
+                </ul>
+            </div>
 
             <label><b>Last Name</b></label>
             <input type="text" placeholder="Enter Last Name" id="newLastName" name="newLastName" required>
+            <div id="errLastN">
+                <ul>
+                    <li id="errLastNInfo" class="invalid">Please enter your last name</li>
+                </ul>
+            </div>
 
             <label><b>Email</b></label>
             <input type="text" placeholder="Enter Email" id="newEmail"  name="newEmail" required>
@@ -106,7 +116,11 @@
 
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" id="newUsername" name="newUsername" required>
-
+            <div id="errUsername">
+                <ul>
+                    <li id="errUserNInfo" class="invalid">Please enter your username</li>
+                </ul>
+            </div>
 
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" id="newPsw" name="newPsw" required>
