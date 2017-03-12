@@ -82,25 +82,34 @@
 <div id="modalSignup" class="modal">
 
     <!--Modal Content -->
-    <form class="modal-content animate" action="signUp.php" method="post">
+    <form id="registerForm" name="registerForm" class="modal-content animate" action="register.php" method="post">
         <div id="register" class="container">
             <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
+            <input type="hidden" id="submitted" name="submitted" value="1"/>
+
             <label><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="newFirstName" required>
+            <input type="text" placeholder="Enter First Name" id="newFirstName" name="newFirstName" required>
 
             <label><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="newLastName" required>
+            <input type="text" placeholder="Enter Last Name" id="newLastName" name="newLastName" required>
 
             <label><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="newEmail" required>
+            <input type="text" placeholder="Enter Email" id="newEmail"  name="newEmail" required>
+
+            <div id="errorEmailDiv">
+                <ul>
+                    <li id="errorEmail" class="invalid">Email Valid</li>
+                </ul>
+            </div>
+
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="newUsername" required>
+            <input type="text" placeholder="Enter Username" id="newUsername" name="newUsername" required>
 
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="newPsw" required>
+            <input type="password" placeholder="Enter Password" id="newPsw" name="newPsw" required>
 
             <div id="pswdInfo">
                 <h5>Password must meet the following requirements:</h5>
@@ -109,15 +118,16 @@
                     <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
                     <li id="number" class="invalid">At least <strong>one number</strong></li>
                     <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+                    <li id="match" class="invalid">Both Passwords <strong>match</strong></li>
                 </ul>
             </div>
 
             <label><b>Confirm Password</b></label>
-            <input type="password" placeholder="Confirm Password" name="confirmPsw" required>
+            <input type="password" placeholder="Confirm Password" id="confirmPsw"  name="confirmPsw" required>
 
 
             <button type="submit" class="loginButton">Sign Up</button>
-            <button type="button" class="cancelButton" onclick="document.getElementById('modalLogin').style.display='none'">Cancel</button>
+            <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
 
         </div>
     </form>

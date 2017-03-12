@@ -162,6 +162,17 @@ input[type=text], input[type=password] {
     display: none;
 }
 
+
+#errorEmailDiv {
+    display: none;
+}
+
+#errorEmailDiv ul {
+    font-size: .875em;
+    list-style-type: none;
+    padding: inherit;
+}
+
 #pswdInfo ul {
     list-style-type: none;
 }
@@ -185,7 +196,7 @@ input[type=text], input[type=password] {
 }
 
 .valid {
-    background: url('../img/content/valid.png') no-repeat;
+    background: url('../img/content/check.png') no-repeat;
     padding-left: 20px;
     line-height: 22px;
 }
