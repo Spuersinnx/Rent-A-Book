@@ -13,7 +13,7 @@ function validateForm() {
     //first name validation
     $('#newFirstName').on('input',function() {
         var firstName = $('#newFirstName').val();
-        if (firstName == "") {
+        if (firstName == "" || firstName.length < 2) {
             $('#errFirstNInfo').removeClass('valid').addClass('invalid');
         }
         else {
@@ -28,8 +28,8 @@ function validateForm() {
 
     //last name validation
     $('#newLastName').on('input',function() {
-        var firstName = $('#newLastName').val();
-        if (firstName == "") {
+        var lastName = $('#newLastName').val();
+        if (lastName == "" || lastName.length < 2) {
             $('#errLastNInfo').removeClass('valid').addClass('invalid');
         }
         else {
@@ -42,22 +42,6 @@ function validateForm() {
         $('#errLastN').hide();
     });
 
-
-    //username validation
-    $('#newUsername').on('input',function() {
-        var firstName = $('#newUsername').val();
-        if (firstName == "") {
-            $('#errUserNInfo').removeClass('valid').addClass('invalid');
-        }
-        else {
-            $('#errUserNInfo').removeClass('invalid').addClass('valid');
-        }
-
-    }).focus(function () {
-        $('#errUsername').show();
-    }).blur(function () {
-        $('#errUsername').hide();
-    });
 
     //password validation
     $('#confirmPsw').keyup(function() {

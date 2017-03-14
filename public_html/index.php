@@ -86,7 +86,7 @@
         <div id="register" class="container">
             <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
-            <input type="hidden" id="submitted" name="submitted" value="1"/>
+
 
             <label><b>First Name</b></label>
             <input type="text" placeholder="Enter First Name" id="newFirstName" name="newFirstName" required>
@@ -113,15 +113,6 @@
                 </ul>
             </div>
 
-
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" id="newUsername" name="newUsername" required>
-            <div id="errUsername">
-                <ul>
-                    <li id="errUserNInfo" class="invalid">Please enter your username</li>
-                </ul>
-            </div>
-
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" id="newPsw" name="newPsw" required>
 
@@ -140,7 +131,7 @@
             <input type="password" placeholder="Confirm Password" id="confirmPsw"  name="confirmPsw" required>
 
 
-            <button type="submit" class="loginButton">Sign Up</button>
+            <input type="submit" name="signUp" class="loginButton">
             <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
 
         </div>
