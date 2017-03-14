@@ -56,7 +56,7 @@ if (isset($_POST['signUp'])) {
         $statement->bindValue(':newEmail', $email);
         $statement->bindValue(':newPsw', $hashedPassword);
         $statement->execute();
-        
+
         $userID = $db->lastInsertId();
         $queryInfo = 'INSERT INTO userInfo(userID, firstName, lastName) VALUES('.$userID.', :newFirstName, :newLastName)';
         $statementInfo = $db->prepare($queryInfo);
