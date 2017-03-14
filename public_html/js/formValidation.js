@@ -49,13 +49,17 @@ function validateForm() {
         var confirmPassword = $('#confirmPsw').val();
 
         //validate confirmed password matches initial password
-        if(confirmPassword = password) {
+        if(confirmPassword == password) {
             $('#match').removeClass('invalid').addClass('valid');
         }
         else {
             $('#match').removeClass('valid').addClass('invalid');
         }
 
+    }).focus(function () {
+        $('#confirmPswdDiv').show();
+    }).blur(function () {
+        $('#confirmPswdDiv').hide();
     });
 
     //email validation
@@ -83,7 +87,7 @@ function validateForm() {
 
 function strengthPassword() {
 
-    $('input[type=password]').keyup(function () {
+    $('#newPsw').keyup(function () {
         var password = $(this).val();
         if (password.length < 8) {
             $('#length').removeClass('valid').addClass('invalid');

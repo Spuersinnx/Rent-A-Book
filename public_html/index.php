@@ -87,7 +87,6 @@
             <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
 
-
             <label><b>First Name</b></label>
             <input type="text" placeholder="Enter First Name" id="newFirstName" name="newFirstName" required>
             <div id="errFirstN">
@@ -123,13 +122,17 @@
                     <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
                     <li id="number" class="invalid">At least <strong>one number</strong></li>
                     <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
-                    <li id="match" class="invalid">Both Passwords <strong>match</strong></li>
+
                 </ul>
             </div>
 
             <label><b>Confirm Password</b></label>
             <input type="password" placeholder="Confirm Password" id="confirmPsw"  name="confirmPsw" required>
-
+            <div id="confirmPswdDiv">
+                <ul>
+                    <li id="match" class="invalid">Password must <strong>match</strong></li>
+                </ul>
+            </div>
 
             <input type="submit" name="signUp" class="loginButton">
             <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
