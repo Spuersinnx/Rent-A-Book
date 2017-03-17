@@ -9,6 +9,17 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/formValidation.js"></script>
+    <script>
+        $('#signUp').click(function () {
+            $.post("index.php",
+                {newFirstName: $('#newFirstName').val(), newLastName: $('#newLastName').val(), newEmail: $('#newEmail').val(), newPsw: $('#newPsw'), confirmPsw: $('#confirmPsw')},
+                function(data) {
+                    $('#response').html(data);
+
+            });
+            
+        });
+    </script>
 
 </head>
 
@@ -134,9 +145,9 @@
                 </ul>
             </div>
 
-            <input type="submit" name="signUp" class="loginButton">
+            <input type="submit" name="signUp" id="signUp" class="loginButton">
             <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
-
+            <textarea id="response"></textarea>
         </div>
     </form>
 </div>
@@ -156,7 +167,6 @@
             modalS.style.display = "none";
         }
     }
-
 </script>
 
 
@@ -171,7 +181,6 @@
         </div>
     </div>
 </footer>
-
 
 
 </body>

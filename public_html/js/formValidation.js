@@ -2,10 +2,12 @@
  * Created by may on 3/10/17.
  */
 
+var errors = 0;
+
 $(document).ready(function() {
 
-    strengthPassword();
     validateForm();
+
 });
 
 function validateForm() {
@@ -15,6 +17,8 @@ function validateForm() {
         var firstName = $('#newFirstName').val();
         if (firstName == "" || firstName.length < 2) {
             $('#errFirstNInfo').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
         else {
             $('#errFirstNInfo').removeClass('invalid').addClass('valid');
@@ -31,6 +35,8 @@ function validateForm() {
         var lastName = $('#newLastName').val();
         if (lastName == "" || lastName.length < 2) {
             $('#errLastNInfo').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
         else {
             $('#errLastNInfo').removeClass('invalid').addClass('valid');
@@ -54,6 +60,8 @@ function validateForm() {
         }
         else {
             $('#match').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
 
     }).focus(function () {
@@ -73,6 +81,8 @@ function validateForm() {
         }
         else {
             $('#errorEmail').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
 
     }).focus(function () {
@@ -81,9 +91,10 @@ function validateForm() {
         $('#errorEmailDiv').hide();
     });
 
-
+    strengthPassword();
+    
+    
 }
-
 
 function strengthPassword() {
 
@@ -91,6 +102,8 @@ function strengthPassword() {
         var password = $(this).val();
         if (password.length < 8) {
             $('#length').removeClass('valid').addClass('invalid');
+            errors++;
+
         } else {
             $('#length').removeClass('invalid').addClass('valid');
         }
@@ -99,6 +112,9 @@ function strengthPassword() {
             $('#letter').removeClass('invalid').addClass('valid');
         } else {
             $('#letter').removeClass('valid').addClass('invalid');
+            errors++;
+
+
         }
 
         //validate capital letter
@@ -106,6 +122,8 @@ function strengthPassword() {
             $('#capital').removeClass('invalid').addClass('valid');
         } else {
             $('#capital').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
 
         //validate number
@@ -113,6 +131,8 @@ function strengthPassword() {
             $('#number').removeClass('invalid').addClass('valid');
         } else {
             $('#number').removeClass('valid').addClass('invalid');
+            errors++;
+
         }
 
     }).focus(function () {
@@ -122,6 +142,14 @@ function strengthPassword() {
     });
 
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -47,7 +47,10 @@ if (isset($_POST['signUp'])) {
         $error[] = 'Passwords do not match';
     }
 
-    if (!empty($error)) {
+    $testArrayEmpty = array_filter($error);
+
+    if(empty($testArrayEmpty)) {
+        print 'has no errors';
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $activationCode = md5(uniqid(rand(), true));
@@ -63,8 +66,12 @@ if (isset($_POST['signUp'])) {
         $statementInfo->bindValue(':newFirstName', $firstName);
         $statementInfo->bindValue(':newLastName', $lastName);
         $statementInfo->execute();
-
     }
+
+
+
+
+
 
 
 }
