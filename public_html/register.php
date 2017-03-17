@@ -17,12 +17,13 @@ $error[] = '';
     if (!preg_match($emailRegex, $email)) {
         $error[] = 'Please enter a valid email address';
     } else {
-        $query = "SELECT email FROM users WHERE userEmail = :newEmail";
+        $query = "SELECT userEmail FROM users WHERE userEmail = :newEmail";
         $statement = $db->prepare($query);
         $statement->bindValue(':newEmail', $email);
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->execute();
 
-        if (!empty($row)) {
+
+        if ($statement->rowCount() > 0) {
             $error[] = 'Email provided already in use';
         }
     }
