@@ -8,13 +8,11 @@ $containUppercase = '/[A-Z]/';
 $containNumber = '/\d/';
 $error[] = '';
 
-if (isset($_POST['signUp'])) {
-
-    $firstName = $_POST['newFirstName'];
-    $lastName = $_POST['newLastName'];
-    $email = $_POST['newEmail'];
-    $password = $_POST['newPsw'];
-    $confirmPass = $_POST['confirmPsw'];
+    $firstName = $_POST['newFirstName1'];
+    $lastName = $_POST['newLastName1'];
+    $email = $_POST['newEmail1'];
+    $password = $_POST['newPsw1'];
+    $confirmPass = $_POST['confirmPsw1'];
 
     if (!preg_match($emailRegex, $email)) {
         $error[] = 'Please enter a valid email address';
@@ -67,14 +65,6 @@ if (isset($_POST['signUp'])) {
         $statementInfo->bindValue(':newLastName', $lastName);
         $statementInfo->execute();
     }
-
-
-
-
-
-
-
-}
 
 
 ?>

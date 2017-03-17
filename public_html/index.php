@@ -10,14 +10,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/formValidation.js"></script>
     <script>
-        $('#signUp').click(function () {
-            $.post("index.php",
-                {newFirstName: $('#newFirstName').val(), newLastName: $('#newLastName').val(), newEmail: $('#newEmail').val(), newPsw: $('#newPsw'), confirmPsw: $('#confirmPsw')},
-                function(data) {
-                    $('#response').html(data);
+        $(document).ready(function () {
+            $('#signUp').click(function () {
+                var newFirstName = $('#newFirstName').val();
+                var newLastName = $('#newLastName').val();
+                var newEmail = $('#newEmail').val();
+                var newPsw = $('#newPsw').val();
+                var confirmPsw = $('#confirmPsw').val();
+                var emailRegex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+
+                if(newFirstName == "" || newFirstName.length < 2 || newLastName == "" || newLastName.length < 2 || newEmail == '' || !newEmail.match(emailRegex) || newPsw == '' || newPsw.length < 8 || !newPsw.match(/[A-z]/) || !newPsw.match(/[A-Z]/) || !newPsw.match(/\d/ || confirmPsw != newPsw)) {
+                    alert ('There were errors encountered with your form, please review the fields');
+                    return false;
+                }
+
+                else {
+                   $.post ("register.php", {
+                       newFirstName1: newFirstName,
+                       newLastName1: newLastName,
+                       newEmail1: newEmail,
+                       newPsw1: newPsw,
+                       confirmPsw1: confirmPsw
+                   });
+
+                }
 
             });
-            
+
         });
     </script>
 
@@ -93,7 +112,7 @@
 <div id="modalSignup" class="modal">
 
     <!--Modal Content -->
-    <form id="registerForm" name="registerForm" class="modal-content animate" action="register.php" method="post">
+    <form id="registerForm" name="registerForm" class="modal-content animate">
         <div id="register" class="container">
             <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
