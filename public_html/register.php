@@ -17,7 +17,7 @@ $error[] = '';
     if (!preg_match($emailRegex, $email)) {
         $error[] = 'Please enter a valid email address';
     } else {
-        $query = "SELECT email FROM users WHERE email = :newEmail";
+        $query = "SELECT email FROM users WHERE userEmail = :newEmail";
         $statement = $db->prepare($query);
         $statement->bindValue(':newEmail', $email);
         $row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -48,7 +48,7 @@ $error[] = '';
     $testArrayEmpty = array_filter($error);
 
     if(empty($testArrayEmpty)) {
-        print 'has no errors';
+
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $activationCode = md5(uniqid(rand(), true));

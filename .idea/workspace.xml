@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b8490a-ad59-4282-8c8e-30c1fd09c06f" name="Default" comment="Added CSS for login box (login, cancel buttons and X button design)&#10;Added functionality for cancel and login buttons to exit out of login prompt">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.php" afterPath="$PROJECT_DIR$/public_html/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/register.php" afterPath="$PROJECT_DIR$/public_html/register.php" />
     </list>
@@ -19,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="164" column="18" lean-forward="true" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -61,15 +60,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+            <state relative-caret-position="302">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
-                <marker date="1489765951000" expanded="true" signature="535:582" ph="SELECT email... users" />
-                <marker date="1489765951000" expanded="true" signature="1552:1621" ph="INSERT INTO users... " />
-                <marker date="1489765951000" expanded="true" signature="1871:1969" ph="INSERT INTO userInfo... " />
+                <marker date="1489777717000" expanded="true" signature="535:586" ph="SELECT email... users" />
+                <marker date="1489777717000" expanded="true" signature="1526:1595" ph="INSERT INTO users... " />
+                <marker date="1489777717000" expanded="true" signature="1845:1943" ph="INSERT INTO userInfo... " />
               </folding>
             </state>
           </provider>
@@ -118,9 +117,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="332" />
+    <option name="x" value="619" />
     <option name="y" value="22" />
-    <option name="width" value="1108" />
+    <option name="width" value="821" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectView">
@@ -318,7 +317,7 @@
       <workItem from="1488993641158" duration="38600000" />
       <workItem from="1489426432349" duration="7759000" />
       <workItem from="1489439013524" duration="11494000" />
-      <workItem from="1489600675833" duration="21570000" />
+      <workItem from="1489600675833" duration="23621000" />
     </task>
     <task id="LOCAL-00001" summary="Added CSS for login box (login, cancel buttons and X button design)&#10;Added functionality for cancel and login buttons to exit out of login prompt">
       <created>1489021083129</created>
@@ -331,13 +330,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82233000" />
+    <option name="totallyTimeSpent" value="84284000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="332" y="22" width="1108" height="873" extended-state="0" />
+    <frame x="619" y="22" width="821" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16696751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22533496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.50389105" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -411,9 +410,9 @@
         <state relative-caret-position="615">
           <caret line="41" column="69" lean-forward="true" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
           <folding>
-            <marker date="1489765951000" expanded="true" signature="535:582" ph="SELECT email... users" />
-            <marker date="1489765951000" expanded="true" signature="1552:1621" ph="INSERT INTO users... " />
-            <marker date="1489765951000" expanded="true" signature="1871:1969" ph="INSERT INTO userInfo... " />
+            <marker date="1489777717000" expanded="true" signature="535:586" ph="SELECT email... users" />
+            <marker date="1489777717000" expanded="true" signature="1526:1595" ph="INSERT INTO users... " />
+            <marker date="1489777717000" expanded="true" signature="1845:1943" ph="INSERT INTO userInfo... " />
           </folding>
         </state>
       </provider>
@@ -457,9 +456,9 @@
         <state relative-caret-position="105">
           <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <marker date="1489765951000" expanded="true" signature="535:582" ph="SELECT email... users" />
-            <marker date="1489765951000" expanded="true" signature="1552:1621" ph="INSERT INTO users... " />
-            <marker date="1489765951000" expanded="true" signature="1871:1969" ph="INSERT INTO userInfo... " />
+            <marker date="1489777717000" expanded="true" signature="535:586" ph="SELECT email... users" />
+            <marker date="1489777717000" expanded="true" signature="1526:1595" ph="INSERT INTO users... " />
+            <marker date="1489777717000" expanded="true" signature="1845:1943" ph="INSERT INTO userInfo... " />
           </folding>
         </state>
       </provider>
@@ -524,23 +523,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index.php">
+    <entry file="file://$PROJECT_DIR$/public_html/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="302">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <marker date="1489777717000" expanded="true" signature="535:586" ph="SELECT email... users" />
+            <marker date="1489777717000" expanded="true" signature="1526:1595" ph="INSERT INTO users... " />
+            <marker date="1489777717000" expanded="true" signature="1845:1943" ph="INSERT INTO userInfo... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/register.php">
+    <entry file="file://$PROJECT_DIR$/public_html/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding>
-            <marker date="1489765951000" expanded="true" signature="535:582" ph="SELECT email... users" />
-            <marker date="1489765951000" expanded="true" signature="1552:1621" ph="INSERT INTO users... " />
-            <marker date="1489765951000" expanded="true" signature="1871:1969" ph="INSERT INTO userInfo... " />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="164" column="18" lean-forward="true" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -112,7 +112,7 @@
 <div id="modalSignup" class="modal">
 
     <!--Modal Content -->
-    <form id="registerForm" name="registerForm" class="modal-content animate">
+    <form id="registerForm" name="registerForm" class="modal-content animate" method="post">
         <div id="register" class="container">
             <span class="close" onclick="document.getElementById('modalSignup').style.display='none'">x</span>
 
@@ -166,7 +166,6 @@
 
             <input type="submit" name="signUp" id="signUp" class="loginButton">
             <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
-            <textarea id="response"></textarea>
         </div>
     </form>
 </div>
