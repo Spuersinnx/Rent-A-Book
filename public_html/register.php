@@ -1,18 +1,17 @@
 <?php
 require_once("../db/db_config.php");
 
-
 $emailRegex = '/^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i';
 $containLetter = '/[A-z]/';
 $containUppercase = '/[A-Z]/';
 $containNumber = '/\d/';
 $error[] = '';
 
-    $firstName = $_POST['newFirstName1'];
-    $lastName = $_POST['newLastName1'];
-    $email = $_POST['newEmail1'];
-    $password = $_POST['newPsw1'];
-    $confirmPass = $_POST['confirmPsw1'];
+    $firstName = $_POST['newFirstName'];
+    $lastName = $_POST['newLastName'];
+    $email = $_POST['newEmail'];
+    $password = $_POST['newPsw'];
+    $confirmPass = $_POST['confirmPsw'];
 
     if (!preg_match($emailRegex, $email)) {
         $error[] = 'Please enter a valid email address';
@@ -22,9 +21,9 @@ $error[] = '';
         $statement->bindValue(':newEmail', $email);
         $statement->execute();
 
-
         if ($statement->rowCount() > 0) {
             $error[] = 'Email provided already in use';
+
         }
     }
 
@@ -48,8 +47,7 @@ $error[] = '';
 
     $testArrayEmpty = array_filter($error);
 
-    if(empty($testArrayEmpty)) {
-
+   if(empty($testArrayEmpty)) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $activationCode = md5(uniqid(rand(), true));
@@ -67,5 +65,5 @@ $error[] = '';
         $statementInfo->execute();
     }
 
-
+    echo json_encode($error);
 ?>
