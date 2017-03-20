@@ -11,7 +11,9 @@
     <script src="js/formValidation.js"></script>
     <script>
         $(document).ready(function () {
-            $('#signUp').click(function () {
+            $('#signUp').click(function (e) {
+
+                e.preventDefault();
                 var newFirstName = $('#newFirstName').val();
                 var newLastName = $('#newLastName').val();
                 var newEmail = $('#newEmail').val();
@@ -19,27 +21,33 @@
                 var confirmPsw = $('#confirmPsw').val();
                 var emailRegex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
 
-                if(newFirstName == "" || newFirstName.length < 2 || newLastName == "" || newLastName.length < 2 || newEmail == '' || !newEmail.match(emailRegex) || newPsw == '' || newPsw.length < 8 || !newPsw.match(/[A-z]/) || !newPsw.match(/[A-Z]/) || !newPsw.match(/\d/ || confirmPsw != newPsw)) {
-                    alert ('There were errors encountered with your form, please review the fields');
+                if (newFirstName == "" || newFirstName.length < 2 || newLastName == "" || newLastName.length < 2 || newEmail == '' || !newEmail.match(emailRegex) || newPsw == '' || newPsw.length < 8 || !newPsw.match(/[A-z]/) || !newPsw.match(/[A-Z]/) || !newPsw.match(/\d/ || confirmPsw != newPsw)) {
+                    alert('There were errors encountered with your form, please review the fields');
                     return false;
                 }
-
                 else {
-                   $.post ("register.php", {
-                       newFirstName1: newFirstName,
-                       newLastName1: newLastName,
-                       newEmail1: newEmail,
-                       newPsw1: newPsw,
-                       confirmPsw1: confirmPsw
-                   });
+                    $.ajax({
+                        type: 'post',
+                        url: 'register.php',
+                        data: $('#registerForm').serialize(),
+                        success: function (json_data) {
+                            var dataArray = $.parseJSON(json_data);
+                            //window.location = ("regThank.php");
 
+                            if(dataArray.indexOf("Email provided already in use") > -1) {
+                                window.location = ("regError.php");
+                            }
+                            else {
+                                window.location = ("regThank.php");
+                            }
+
+
+                        }
+                    });
                 }
-
             });
-
         });
     </script>
-
 </head>
 
 <body>
@@ -87,7 +95,7 @@
 <!--Modal Login Box-->
 <div id="modalLogin" class="modal">
 
-<!--Modal Content-->
+    <!--Modal Content-->
     <form class="modal-content animate">
         <div class="container">
             <span class="close" onclick="document.getElementById('modalLogin').style.display='none'">x</span>
@@ -101,7 +109,9 @@
 
             <button type="submit" class="loginButton">Login</button>
 
-            <button type="button" class="cancelButton" onclick="document.getElementById('modalLogin').style.display='none'">Cancel</button>
+            <button type="button" class="cancelButton"
+                    onclick="document.getElementById('modalLogin').style.display='none'">Cancel
+            </button>
 
         </div>
     </form>
@@ -134,7 +144,7 @@
             </div>
 
             <label><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" id="newEmail"  name="newEmail" required>
+            <input type="text" placeholder="Enter Email" id="newEmail" name="newEmail" required>
 
             <div id="errorEmailDiv">
                 <ul>
@@ -152,12 +162,11 @@
                     <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
                     <li id="number" class="invalid">At least <strong>one number</strong></li>
                     <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
-
                 </ul>
             </div>
 
             <label><b>Confirm Password</b></label>
-            <input type="password" placeholder="Confirm Password" id="confirmPsw"  name="confirmPsw" required>
+            <input type="password" placeholder="Confirm Password" id="confirmPsw" name="confirmPsw" required>
             <div id="confirmPswdDiv">
                 <ul>
                     <li id="match" class="invalid">Password must <strong>match</strong></li>
@@ -165,7 +174,9 @@
             </div>
 
             <input type="submit" name="signUp" id="signUp" class="loginButton">
-            <button type="button" class="cancelButton" onclick="document.getElementById('modalSignup').style.display='none'">Cancel</button>
+            <button type="button" class="cancelButton"
+                    onclick="document.getElementById('modalSignup').style.display='none'">Cancel
+            </button>
         </div>
     </form>
 </div>
@@ -177,7 +188,7 @@
     var modalS = document.getElementById('modalSignup');
 
     //user clicks anywhere outside of the modal, close modal
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
