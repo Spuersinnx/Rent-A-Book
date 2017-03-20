@@ -9,6 +9,10 @@
     <title>Rent a Book - Search</title>
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
+     /Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/formValidation.js"></script>
     <script>
@@ -58,19 +62,19 @@
 </header>
 
 <!--Main Search Form Content Image-->
-<div id="search_main" class="search-form">
-    <h3>Search Books by...<span class="search-img"></span></h3>
+<div id="search-Main">
+    <h3>Search Books by...</h3>
 
     <!-- May move to external db_search.php -->
-    <form id="search_form" action="" method="post">
+    <form id="search-form" action="../db/db_search.php" method="post">
 
-        <label><b>Book Title</b></label>
-        <input type="text" maxlength="100" name="bookName">
+        <label><b>Book Title</b>
+        <input type="text" name="bookName"></label>
 
-        <label><b>Book ISBN</b></label>
-        <input type="text" maxlength="100" name="ISBN">
+        <label><b>Book ISBN</b>
+        <input type="text" name="ISBN"></label>
 
-        <button type="submit" class="searchButton">Search</button>
+        <button type="submit" class="searchButton">Search</button><span id="search-img"><img class=search-img src="img/content/search64.png"></span>
 
         <button type="button" class="clearButton" onclick="reset();">Clear</button>
 
@@ -198,6 +202,10 @@
                       target="_blank">CC 3.0 BY</a></p>
         </div>
     </div>
+
+    <!-- Bootstrap
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    /Bootstrap -->
 </footer>
 
 
