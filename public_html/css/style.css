@@ -345,6 +345,16 @@ div#search-Main {
     padding: inherit;
 }
 
+#message {
+    padding-top: 50px;
+    height: 100%;
+
+}
+
+#message h4,p{
+    text-align: center;
+}
+
 #pswdInfo ul {
     list-style-type: none;
 }
