@@ -4,6 +4,7 @@ body {
     font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
+
 p {
     line-height: 20px;
     margin-bottom: 20px;
@@ -12,7 +13,7 @@ p {
 h1 {
     font-family: 'Varela Round', sans-serif;
     font-weight: bold;
-    color: dimgrey;
+    color: #444;
     font-size: 45px;
     margin-bottom: 20px;
 }
@@ -28,7 +29,7 @@ h2 {
 
 h3 {
     font-size: 30px;
-    color: #444;
+    color: dimgrey;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;

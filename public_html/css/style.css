@@ -38,6 +38,20 @@ header nav ul li a {
     opacity: 0.8;
 }
 
+#books-image {
+    height: 580px;
+    width: auto;
+    padding-top: 1px;
+    background: url("../img/content/books.jpg") no-repeat center;
+
+}
+
+#books-image h2 {
+    margin-top: 260px;
+    margin-left: 450px;
+    color: white;
+}
+
 #bookshelf-image h2 {
     margin: 180px 0 40px 0;
 }
@@ -67,6 +81,68 @@ header nav ul li a {
 .container {
     padding: 16px;
 }
+
+#menu-container {
+    width: 200px;
+    padding-top: 20px;
+    margin-left: 20px;
+    height: 500px;
+}
+
+#menu-container p {
+    float: right;
+    font-size: large;
+    text-transform: capitalize;
+}
+
+#menu-container img {
+    float: left;
+
+}
+/*Dropdown menu style*/
+.dropdownbtn {
+    background-color: white;
+    color: #444;
+    font-weight: bold;
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+
+    text-transform: uppercase;
+}
+
+.dropdownbtn:hover {
+    color: #02b8dd;
+}
+
+.dropdown {
+    margin-top: 50px;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #777;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: #02b8dd;
+}
+/*Dropdown menu end style */
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -153,16 +229,8 @@ div#search-Main {
     margin: 8px 25%;
     font-size: medium;
     color: white;
-
 }
 
-.dropdown {
-
-    /* Dropdown Box CSS */
-
-
-
-}
 
 /* Search page CSS end */
 
