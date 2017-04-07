@@ -46,6 +46,7 @@
                     });
                 }
             });
+
         });
     </script>
 </head>
@@ -96,18 +97,18 @@
 <div id="modalLogin" class="modal">
 
     <!--Modal Content-->
-    <form class="modal-content animate">
+    <form class="modal-content animate" action="login.php" method="post">
         <div class="container">
             <span class="close" onclick="document.getElementById('modalLogin').style.display='none'">x</span>
 
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
 
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
 
-            <button type="submit" class="loginButton">Login</button>
+            <input type="submit" name="logIn" class="loginButton">
 
             <button type="button" class="cancelButton"
                     onclick="document.getElementById('modalLogin').style.display='none'">Cancel
@@ -173,7 +174,7 @@
                 </ul>
             </div>
 
-            <input type="submit" name="signUp" id="signUp" class="loginButton">
+            <input type="submit" value="Sign Up" name="signUp" id="signUp" class="loginButton">
             <button type="button" class="cancelButton"
                     onclick="document.getElementById('modalSignup').style.display='none'">Cancel
             </button>

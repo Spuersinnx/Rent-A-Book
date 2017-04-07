@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once ('../db/db_config.php');
 
 
 ?>
@@ -17,7 +18,7 @@
         <h1>Rent a Book<span class="color">.</span></h1>
         <nav>
             <ul>
-                <li><button class="dropdownbtn">My Account</button></li>
+                <li><button class="dropdownbtn"><a href="account.php"> My Account</a></button></li>
                 <li><button class="dropdownbtn"><a href="index.php"> Log Out</a></button></li>
             </ul>
         </nav>
@@ -30,11 +31,27 @@
 </div>
 
 <div id="menu-container">
-    <img src="img/content/user.png"><p>Username</p>
-
-
-
+    <img src="img/content/user.png"><p><?php echo $_SESSION['userEmail']?></p>
 </div>
+
+<div id="menu-container2">
+    <h3>My Books</h3>
+</div>
+<hr>
+<div id="menu-container2">
+</div>
+<hr>
+
+<div id="menu-container2">
+    <h3>Rent a book</h3>
+</div>
+
+<div id="menu-container2">
+<?php include 'Search.php' ?>
+</div>
+
+
+
 
 
 
@@ -51,5 +68,5 @@
         </div>
     </div>
 </footer>
-
+</body>
 </html>

@@ -86,7 +86,7 @@ header nav ul li a {
     width: 200px;
     padding-top: 20px;
     margin-left: 20px;
-    height: 500px;
+    height: 80px;
 }
 
 #menu-container p {
@@ -97,8 +97,20 @@ header nav ul li a {
 
 #menu-container img {
     float: left;
-
 }
+
+#menu-container2 {
+    width: auto;
+    height: auto;
+    background-color: white;
+}
+
+#column {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
 /*Dropdown menu style*/
 .dropdownbtn {
     background-color: white;
@@ -107,7 +119,6 @@ header nav ul li a {
     font-size: medium;
     border: none;
     cursor: pointer;
-
     text-transform: uppercase;
 }
 

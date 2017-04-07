@@ -38,31 +38,21 @@
 </head>
 
 <body>
-<header>
-    <div class="wrapper">
-        <h1>Rent a Book - Search<span class="color">.</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+
 
 <!--Main Search Form Content Image-->
 <div id="search-Main">
-    <h3>Search Books by...</h3>
+
 
     <!-- May move to external db_search.php -->
     <form id="search-form" action="../db/db_search.php" method="post">
 
-        <label>Select an Option:<select class="dropdown">
+        <select class="dropdown">
 
                 <option value="1" selected>Book Title</option>
                 <option value="2">ISBN</option>
 
-            </select></label><br/><br />
+            </select><br/><br />
 
         <label><b>Book Title</b>
             <input type="text" name="bookName"></label>
@@ -71,7 +61,7 @@
             <input type="text" name="ISBN"></label>
 
         <button type="submit" id="search-button" class="searchButton">Search</button>
-        <span id="search-img"><img class=search-img src="img/content/search64.png"></span>
+
 
         <button type="button" class="clearButton" onclick="reset();">Clear</button>
 
@@ -81,21 +71,6 @@
 </div>
 
 
-<footer>
-    <div class="wrapper">
-        <div id="footer-info">
-            <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
-            <p>Icons made by <a href="http://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel
-                    perfect</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed
-                by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                      target="_blank">CC 3.0 BY</a></p>
-        </div>
-    </div>
-
-    <!-- Bootstrap
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    /Bootstrap -->
-</footer>
 
 
 </body>
