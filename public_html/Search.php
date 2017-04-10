@@ -3,7 +3,6 @@
 
 ?>
 
-
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Rent a Book - Search</title>
@@ -39,7 +38,6 @@
 
 <body>
 
-
 <!--Main Search Form Content Image-->
 <div id="search-Main">
 
@@ -47,18 +45,8 @@
     <!-- May move to external db_search.php -->
     <form id="search-form" action="../db/db_search.php" method="post">
 
-        <select class="dropdown">
-
-                <option value="1" selected>Book Title</option>
-                <option value="2">ISBN</option>
-
-            </select><br/><br />
-
-        <label><b>Book Title</b>
-            <input type="text" name="bookName"></label>
-
-        <label><b>Book ISBN</b>
-            <input type="text" name="ISBN"></label>
+        <label><b>Search:</b>
+            <input type="text" name="userSearch"></label>
 
         <button type="submit" id="search-button" class="searchButton">Search</button>
 
@@ -69,8 +57,6 @@
 
 
 </div>
-
-
 
 
 </body>
