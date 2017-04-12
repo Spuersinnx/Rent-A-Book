@@ -23,7 +23,7 @@ $errorMsg[] = '';
     $dbPassword = $userPassword[0];
 
     //verify password
-    if (password_verify($password, $dbPassword)) {
+    if ($userName && password_verify($password, $dbPassword)) {
        $errorMsg[] = '';
     }
 
@@ -41,8 +41,21 @@ $errorMsg[] = '';
         $statementUser->execute();
         $userInfo = $statementUser->fetch();
 
+
         $_SESSION['firstName'] = $userInfo['firstName'];
         $_SESSION['lastName'] = $userInfo['lastName'];
+        $_SESSION['userID'] = $userInfo['userID'];
+        $_SESSION['personID'] = $userInfo['personID'];
+
+        $queryEmail = "SELECT userEmail FROM users WHERE userID = ".$_SESSION['userID']." ";
+        $statementUserEmail = $db->prepare($queryEmail);
+        $statementUserEmail->execute();
+        $dbUserEmail = $statementUserEmail->fetch();
+
+        $_SESSION['userEmail'] = $dbUserEmail;
+
+
+
     }
 
 

@@ -21,7 +21,7 @@
 <header>
 <div class="wrapper">
 
-<div id="message">
+<div class="message">
 <h4>Thank You For Joining Rent a Book</h4>
 </div>
 </div>

@@ -56,6 +56,7 @@ header nav ul li a {
     margin: 180px 0 40px 0;
 }
 
+
 .cancelButton {
     background-color: dimgrey;
     width: 50%;
@@ -82,77 +83,36 @@ header nav ul li a {
     padding: 16px;
 }
 
-#menu-container {
+/* Account Form CSS*/
+.accountForm input[type=text] {
+    width: 25%;
+    height: 15px;
+    font-size: medium;
+}
+
+.menu-container {
     width: 200px;
     padding-top: 20px;
     margin-left: 20px;
     height: 80px;
 }
 
-#menu-container p {
-    float: right;
+.menu-container p {
+
     font-size: large;
     text-transform: capitalize;
+    float: right;
 }
 
-#menu-container img {
+.menu-container img {
     float: left;
 }
 
-#menu-container2 {
+.menu-container2 {
     width: auto;
     height: auto;
     background-color: white;
 }
-
-#column {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-}
-
-/*Dropdown menu style*/
-.dropdownbtn {
-    background-color: white;
-    color: #444;
-    font-weight: bold;
-    font-size: medium;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.dropdownbtn:hover {
-    color: #02b8dd;
-}
-
-.dropdown {
-    margin-top: 50px;
-    display: block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: #777;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    color: #02b8dd;
-}
-/*Dropdown menu end style */
 
 
 input[type=text], input[type=password] {
@@ -356,13 +316,13 @@ div#search-Main {
     padding: inherit;
 }
 
-#message {
+.message {
     padding-top: 50px;
     height: 100%;
 
 }
 
-#message h4,p{
+p.message, h4.message {
     text-align: center;
 }
 

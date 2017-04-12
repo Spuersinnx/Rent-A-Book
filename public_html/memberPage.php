@@ -36,26 +36,25 @@ if(isset($_SESSION['lastName'])) {
     <h2>Welcome Back</h2>
 </div>
 
-<div id="menu-container">
+<div class="menu-container">
     <img src="img/content/user.png"><p><?php echo $firstName.' '. $lastName; ?></p>
 </div>
 
-<div id="menu-container2">
+<div class="menu-container2">
     <h3>My Books</h3>
 </div>
 <hr>
-<div id="menu-container2">
+<div class="menu-container2">
 </div>
 <hr>
 
-<div id="menu-container2">
+<div class="menu-container2">
     <h3>Rent a book</h3>
 </div>
 
-<div id="menu-container2">
+<div class="menu-container2">
 <?php include 'Search.php' ?>
 </div>
-
 
 
 <footer>
