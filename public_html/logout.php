@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: may
- * Date: 4/6/17
- * Time: 2:47 PM
- */
+session_start();
+$_SESSION = array();
+session_destroy();
+header("location:index.php");
+?>

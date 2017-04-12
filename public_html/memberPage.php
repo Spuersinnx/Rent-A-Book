@@ -2,6 +2,12 @@
 session_start();
 require_once ('../db/db_config.php');
 
+if(isset($_SESSION['firstName'])) {
+    $firstName = $_SESSION['firstName'];
+}
+if(isset($_SESSION['lastName'])) {
+    $lastName = $_SESSION['lastName'];
+}
 
 ?>
 
@@ -31,7 +37,7 @@ require_once ('../db/db_config.php');
 </div>
 
 <div id="menu-container">
-    <img src="img/content/user.png"><p><?php echo $_SESSION['userEmail']?></p>
+    <img src="img/content/user.png"><p><?php echo $firstName.' '. $lastName; ?></p>
 </div>
 
 <div id="menu-container2">
@@ -49,11 +55,6 @@ require_once ('../db/db_config.php');
 <div id="menu-container2">
 <?php include 'Search.php' ?>
 </div>
-
-
-
-
-
 
 
 

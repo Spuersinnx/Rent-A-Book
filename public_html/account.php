@@ -1,4 +1,10 @@
-<?php ?>
+<?php
+session_start();
+
+
+
+
+?>
 
 
 
@@ -16,9 +22,13 @@
     <div class="wrapper">
         <h1>Rent a Book<span class="color">.</span></h1>
         <nav>
+
             <ul>
-                <li><button class="dropdownbtn"><a href="index.php"> Log Out</a></button></li>
+                <li><button class="dropdownbtn" name="home"><a href="memberPage.php"> Home </a></button></li>
+                <li><form action="logout.php" method="post"><button class="dropdownbtn" name="logOut"></button> </form><a href=""> Log Out</a></button></li>
+
             </ul>
+
         </nav>
     </div>
 </header>

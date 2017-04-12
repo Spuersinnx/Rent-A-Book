@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 ?>
 
 
@@ -32,7 +34,7 @@
                         data: $('#registerForm').serialize(),
                         success: function (json_data) {
                             var dataArray = $.parseJSON(json_data);
-                            //window.location = ("regThank.php");
+
 
                             if(dataArray.indexOf("Email provided already in use") > -1) {
                                 window.location = ("regError.php");
@@ -45,6 +47,39 @@
                         }
                     });
                 }
+            });
+
+            $('#logIn').click(function (l) {
+
+                l.preventDefault();
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                if(email == "" || password == "") {
+                    alert("Please fill out the fields");
+                }
+                else {
+                    $.ajax({
+                        type: 'post',
+                        url: 'login.php',
+                        data: $('#loginForm').serialize(),
+                        success: function (json_data2) {
+
+                            var data = $.parseJSON(json_data2);
+
+                            if(data.indexOf("Invalid Credentials") > -1) {
+                                alert('Invalid Credentials');
+                            }
+
+                            else {
+                                window.location = ("memberPage.php");
+                            }
+
+                        }
+                    });
+                }
+
+
             });
 
         });
@@ -97,18 +132,18 @@
 <div id="modalLogin" class="modal">
 
     <!--Modal Content-->
-    <form class="modal-content animate" action="login.php" method="post">
+    <form id="loginForm" class="modal-content animate" action="login.php" method="post">
         <div class="container">
             <span class="close" onclick="document.getElementById('modalLogin').style.display='none'">x</span>
 
             <label><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <input type="submit" name="logIn" class="loginButton">
+            <input type="submit" name="logIn" id="logIn" class="loginButton">
 
             <button type="button" class="cancelButton"
                     onclick="document.getElementById('modalLogin').style.display='none'">Cancel
