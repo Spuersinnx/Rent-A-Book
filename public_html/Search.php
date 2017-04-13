@@ -8,10 +8,6 @@
     <title>Rent a Book - Search</title>
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
-     /Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         /* $(document).ready(function () {
@@ -47,13 +43,13 @@
 
         <label><b>Search:</b>
             <input type="text" name="userSearch"></label>
-
         <button type="submit" id="search-button" class="searchButton">Search</button>
-
-
-        <button type="button" class="clearButton" onclick="reset();">Clear</button>
-
     </form>
+
+    <form method="post" action="browseBooks.php">
+        <button type="submit" id="search-button" class="browseButton">Browse Available</button>
+    </form>
+
 
 
 </div>
