@@ -23,10 +23,13 @@ if(isset($_SESSION['lastName'])) {
     <div class="wrapper">
         <h1>Rent a Book<span class="color">.</span></h1>
         <nav>
-            <ul>
-                <li><button class="dropdownbtn"><a href="account.php"> My Account</a></button></li>
-                <li><button class="dropdownbtn"><a href="index.php"> Log Out</a></button></li>
-            </ul>
+            <form action="logout.php" method="POST">
+                <ul>
+                <li><a href="account.php"> My Account</a></li>
+
+                <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
+                </ul>
+            </form>
         </nav>
     </div>
 </header>
@@ -37,7 +40,7 @@ if(isset($_SESSION['lastName'])) {
 </div>
 
 <div class="menu-container">
-    <img src="img/content/user.png"><p><?php echo $firstName.' '. $lastName; ?></p>
+    <img src="img/content/user.png"><p><?php echo $firstName.' '. $lastName ?></p>
 </div>
 
 <div class="menu-container2">

@@ -84,11 +84,27 @@ header nav ul li a {
 }
 
 /* Account Form CSS*/
-.accountForm input[type=text] {
-    width: 25%;
-    height: 15px;
-    font-size: medium;
+fieldset {
+
 }
+.accountForm td {
+    height: 3px;
+}
+.accountForm tr{
+    padding-right: 30px;
+}
+.accountForm input[type=text] {
+    width: auto;
+    font-size: small;
+    margin-right: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+/* End of Account Form*/
+
 
 .menu-container {
     width: 200px;

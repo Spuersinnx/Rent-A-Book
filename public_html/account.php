@@ -41,20 +41,42 @@ session_start();
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
     <h5 >Profile Information</h5>
-    <form class="accountForm" method="post">
+<form class="accountForm" action="" method="post">
 
-        <label>First Name: </label><input type="text" value="<?php echo $_SESSION['firstName'];?>">
-        <br>
-        <label>Last Name: </label><input type="text" value="<?php echo $_SESSION['lastName'];?>">
-        <br>
-        <label>Email: </label><input type="text" value="<?php echo $_SESSION['userEmail'];?>">
-    </form>
+    <table>
+       <tr>
+           <td>First Name:</td>
+           <td><input type="text" name="firstName" value="<?php echo $_SESSION['firstName'];?>"></td>
+           <td>Last Name:</td>
+           <td><input type="text" name="lastName" value="<?php echo $_SESSION['lastName'];?>"></td>
+
+       </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" name="userEmail" value="<?php echo $_SESSION['userEmail'][0]?> "></td>
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
 </div>
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
-    <h5>Billing Information</h5>
-    <p>test</p>
+        <h5>Billing Information</h5>
+        <table>
+            <tr>
+                <td>Credit Card Number: </td>
+                <td><input type="text" value=""></td>
+            </tr>
+        </table>
 </div>
+
+
+</form>
+
+
+
 
 
 

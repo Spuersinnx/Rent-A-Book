@@ -36,8 +36,9 @@ $errorMsg[] = '';
 
     //get user info, and display
     if(empty($_SESSION['login.Error'])) {
-        $queryUser = "SELECT * FROM userInfo INNER JOIN users ON userInfo.userID = users.userID";
+        $queryUser = "SELECT * FROM userInfo INNER JOIN users ON userInfo.userID = users.userID WHERE users.userEmail =:userEmail";
         $statementUser = $db->prepare($queryUser);
+        $statementUser->bindValue(":userEmail", $userEmail);
         $statementUser->execute();
         $userInfo = $statementUser->fetch();
 
@@ -47,7 +48,7 @@ $errorMsg[] = '';
         $_SESSION['userID'] = $userInfo['userID'];
         $_SESSION['personID'] = $userInfo['personID'];
 
-        $queryEmail = "SELECT userEmail FROM users WHERE userID = ".$_SESSION['userID']." ";
+        $queryEmail = "SELECT userEmail FROM users WHERE userID = '". $_SESSION['userID']."'";
         $statementUserEmail = $db->prepare($queryEmail);
         $statementUserEmail->execute();
         $dbUserEmail = $statementUserEmail->fetch();
