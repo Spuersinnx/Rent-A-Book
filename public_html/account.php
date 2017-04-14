@@ -64,10 +64,11 @@ session_start();
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
         <h5>Billing Information</h5>
+
         <table>
             <tr>
                 <td>Credit Card Number: </td>
-                <td><input type="text" value=""></td>
+                <td><input type="text" value="test"></td>
             </tr>
         </table>
 </div>
