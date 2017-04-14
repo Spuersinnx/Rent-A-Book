@@ -218,6 +218,33 @@ div#search-Main {
     color: white;
 }
 
+table.browseBooks {
+    align-items: center;
+    margin-left: 220px;
+
+}
+table.browseBooks{
+    border: 1px solid;
+    border-collapse: collapse;
+
+}
+
+
+tr.browseBooks {
+
+}
+
+th.browseBooks{
+    padding: 10px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+td.browseBooks {
+    padding: 10px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
 
 /* Search page CSS end */
 
