@@ -7,6 +7,11 @@ require_once("db_config.php");
 #Get Post variables from search form
 $userSearch = filter_input(INPUT_POST, "userSearch");
 
+#Set Cookie to save what user searched last
+if(isset($userSearch)) {
+    $expire = strtotime("+1 year");
+    setcookie('userSearch', $userSearch, $expire, '/');
+}
 #Changes characters in html to their equivalent forms
 #$userSearch = htmlspecialchars($userSearch);
 

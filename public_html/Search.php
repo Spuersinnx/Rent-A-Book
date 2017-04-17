@@ -1,5 +1,10 @@
 <?php
 
+#Check if cookie is set
+if(isset($_COOKIE['userSearch'])){
+
+    $userSearch = $_COOKIE['userSearch'];
+}
 
 ?>
 
@@ -21,15 +26,13 @@
     <form id="search-form" action="../db/db_search.php" method="post">
 
         <label><b>Search:</b>
-            <input type="text" name="userSearch"></label>
+            <input type="text" name="userSearch" value="<?= $userSearch?>"></label>
         <button type="submit" id="search-button" class="searchButton">Search</button>
     </form>
 
     <form method="post" action="browseBooks.php">
         <button type="submit" id="search-button" class="browseButton">Browse Available</button>
     </form>
-
-
 
 </div>
 
