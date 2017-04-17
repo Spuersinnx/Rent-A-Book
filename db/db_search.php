@@ -13,16 +13,12 @@ $userSearch = filter_input(INPUT_POST, "userSearch");
 
 #Queries for searching the database for books
 $basicSearchQuery = $db->prepare("SELECT *
-                                      FROM book b
-                                      WHERE  b.BookID IN (
-                                        SELECT books.BookID, author.authorName 
-                                            FROM books INNER JOIN author
-                                            ON ( books.bookID = author.bookID)
-                                            WHERE author.authorName LIKE '%:userSearch%')
+                                        FROM books b INNER JOIN author a ON (b.bookID = a.bookID)
+                                        WHERE a.authorName LIKE '%:userSearch%'
                                         OR b.ISBN LIKE '%:userSearch%'
                                         OR b.bookname LIKE '%:userSearch%'");
-
 $basicSearchQuery->execute(array(
     ":userSearch" => $userSearch
 ));
+#Put the user's search results in an array
 $userResults = $basicSearchQuery->fetchAll();
