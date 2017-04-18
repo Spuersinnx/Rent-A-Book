@@ -28,8 +28,8 @@ $genreBooks = $statementGenre->fetchAll();
         <nav>
             <form action="logout.php" method="POST">
                 <ul>
+                    <li><a href="memberPage.php"> Home </a></button></li>
                     <li><a href="account.php"> My Account</a></li>
-
                     <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
                 </ul>
             </form>
@@ -49,9 +49,7 @@ $genreBooks = $statementGenre->fetchAll();
         echo '
         <tr style=" padding: 10px;">
         <td style="padding: 10px; "><img src="'.$genreBook['bookImage'].'" width="150px" height="200px"></td>
-        <td style="vertical-align: top; padding-top: 15px;">'.$genreBook['bookName'].' by '.$genreBook['authorName'].'</td>
-        <input type="hidden" name="bookID" value=>
-        <input type="hidden" name="bookItemID" value=>
+        <td style="vertical-align: top; padding-top: 15px;"><a href="bookInfoRent.php?bookID='.$genreBook['bookID'].'" > '.$genreBook['bookName'].'</a>  by '.$genreBook['authorName'].'</td>
         <input type="hidden" name="isSubmitted" value="1">
         </tr>
         ';
@@ -59,3 +57,16 @@ $genreBooks = $statementGenre->fetchAll();
     ?>
 </table>
 
+
+
+<footer>
+    <div class="wrapper">
+        <div id="footer-info">
+            <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+            <p>Icons made by <a href="http://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel
+                    perfect</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed
+                by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                      target="_blank">CC 3.0 BY</a></p>
+        </div>
+    </div>
+</footer>

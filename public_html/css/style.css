@@ -57,6 +57,28 @@ header nav ul li a {
     margin: 180px 0 40px 0;
 }
 
+#bookInfo {
+    margin-left: 40px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+
+#bookInfo img {
+    float: left;
+}
+
+#bookInfo h4, h5 {
+    margin-left: 250px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+#bookInfo p {
+   margin-left: 250px;
+    margin-right: 200px;
+    display: block;
+}
 
 .cancelButton {
     background-color: dimgrey;
@@ -238,6 +260,7 @@ tr.browseBooks {
 table.genreBooks {
     align-items: center;
     margin-left: 220px;
+    margin-bottom: 100px;
     border-collapse: collapse;
     border: none;
 }
