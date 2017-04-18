@@ -1,13 +1,19 @@
 <?php
 session_start();
-require_once ('../db/db_config.php');
+require_once('../db/db_config.php');
 
-if(isset($_SESSION['firstName'])) {
+if (isset($_SESSION['firstName'])) {
     $firstName = $_SESSION['firstName'];
 }
-if(isset($_SESSION['lastName'])) {
+if (isset($_SESSION['lastName'])) {
     $lastName = $_SESSION['lastName'];
 }
+
+$queryGenres = 'SELECT * FROM genre';
+$statementGenre = $db->prepare($queryGenres);
+$statementGenre->execute();
+$genres = $statementGenre->fetchAll();
+
 
 ?>
 
@@ -25,9 +31,9 @@ if(isset($_SESSION['lastName'])) {
         <nav>
             <form action="logout.php" method="POST">
                 <ul>
-                <li><a href="account.php"> My Account</a></li>
+                    <li><a href="account.php"> My Account</a></li>
 
-                <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
+                    <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
                 </ul>
             </form>
         </nav>
@@ -40,13 +46,15 @@ if(isset($_SESSION['lastName'])) {
 </div>
 
 <div class="menu-container">
-    <img src="img/content/user.png"><p><?php echo $firstName.' '. $lastName ?></p>
+    <img src="img/content/user.png">
+    <p><?php echo $firstName . ' ' . $lastName ?></p>
 </div>
 
 <div class="menu-container2">
     <h3>My Books</h3>
 </div>
 <hr>
+
 <div class="menu-container2">
 </div>
 <hr>
@@ -56,7 +64,36 @@ if(isset($_SESSION['lastName'])) {
 </div>
 
 <div class="menu-container2">
-<?php include 'Search.php' ?>
+    <?php include 'Search.php' ?>
+</div>
+
+<hr>
+
+<div class="menu-container2">
+    <h3>Browse Books</h3>
+
+    <table class="browseBooks">
+        <?php
+        $counter = 0;
+
+        foreach ($genres as $genre) {
+
+            echo '
+            <form class="browseBooks" action="browseBooks.php" method="post">
+            <td><a href="browseBooks.php?genreID='.$genre['genreID'].'" >'.$genre['genreName'].'</a>  books</td>
+            <input type="hidden" name="genreID" value="'.$genre['genreID'].'">
+           
+            ';
+            $counter++;
+            if($counter % 2 == 0)
+            {
+                echo '</tr><tr>';
+            }
+
+
+        } ?>
+    </table>
+
 </div>
 
 

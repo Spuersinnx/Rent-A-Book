@@ -2,34 +2,13 @@
 session_start();
 require_once ('../db/db_config.php');
 
-$queryDbBooks = 'SELECT * FROM books, author WHERE author.bookID = books.bookID';
-$statementDbBooks = $db->prepare($queryDbBooks);
-$statementDbBooks->execute();
-$dbBooks = $statementDbBooks->fetchAll();
+$getGenre = $_GET['genreID'];
 
-$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-$cartSize = 0;
-
-if(isset($_POST['isSubmitted'])) {
-    $bookID = $_POST['bookID'];
-    $queryBookItem = 'SELECT * FROM bookItem WHERE bookID = :bookID LIMIT 1';
-    $statementBookItem = $db->prepare($queryBookItem);
-    $statementBookItem->bindValue(':bookID', $bookID);
-    $statementBookItem->execute();
-    $bookItem = $statementBookItem->fetch();
-
-    if ($bookItem > 0) {
-        $_SESSION['cart'][] = array ('bookID'=>$bookItem['bookID']);
-        $cartSize = sizeof($_SESSION['cart']);
-    }
-
-    else {
-        echo 'none';
-    }
-
-print_r($_SESSION['cart']);
-
-}
+$queryGenre = 'SELECT * FROM books INNER JOIN author ON books.bookID = author.bookID WHERE books.genreID = :genreID';
+$statementGenre = $db->prepare($queryGenre);
+$statementGenre->bindValue(':genreID', $getGenre);
+$statementGenre->execute();
+$genreBooks = $statementGenre->fetchAll();
 
 
 
@@ -61,38 +40,22 @@ print_r($_SESSION['cart']);
 <hr>
 
 <form>
-   <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $cartSize?> Items <img src="img/content/cart.png"></h6>
+    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <img src="img/content/cart.png"></h6>
 </form>
 
-
-<table class="browseBooks">
-
+<table class="genreBooks">
     <?php
-    foreach($dbBooks as $dbBook) {
+    foreach($genreBooks as $genreBook) {
         echo '
-        <form action="" method="post">
-        
-        <tr style=" padding: 10px;border: 1px solid;border-collapse: collapse;">
-        <td style=" padding: 10px;border: 1px solid;border-collapse: collapse;"><img src="img/content/bookIcon.png"></td>
-        <td style="padding: 10px; border: 1px solid;border-collapse: collapse;">'.$dbBook['bookName'].' by '.$dbBook['authorName'].'</td>
-        
-        <input type="hidden" name="bookID" value='.$dbBook['bookID'].'>
-        
-        <td style=" padding: 10px;border: 1px solid;border-collapse: collapse;"><input type="image" src="img/content/info.png" name="description" title="View Description"></td>
+        <tr style=" padding: 10px;">
+        <td style="padding: 10px; "><img src="'.$genreBook['bookImage'].'" width="150px" height="200px"></td>
+        <td style="vertical-align: top; padding-top: 15px;">'.$genreBook['bookName'].' by '.$genreBook['authorName'].'</td>
+        <input type="hidden" name="bookID" value=>
+        <input type="hidden" name="bookItemID" value=>
         <input type="hidden" name="isSubmitted" value="1">
-        <td style=" padding: 10px;border: 1px solid;border-collapse: collapse;"><input type="image" src="img/content/cart-plus.png" name="addCart" title="Add to Cart"></td>
         </tr>
-        
-        </form>
         ';
     }
     ?>
 </table>
 
-
-
-
-
-
-</body>
-</html>

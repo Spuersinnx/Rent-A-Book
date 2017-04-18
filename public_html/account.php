@@ -68,7 +68,7 @@ session_start();
         <table>
             <tr>
                 <td>Credit Card Number: </td>
-                <td><input type="text" value="test"></td>
+                <td><input type="text" value=""></td>
             </tr>
         </table>
 </div>

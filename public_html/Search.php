@@ -30,10 +30,6 @@ if(isset($_COOKIE['userSearch'])){
         <button type="submit" id="search-button" class="searchButton">Search</button>
     </form>
 
-    <form method="post" action="browseBooks.php">
-        <button type="submit" id="search-button" class="browseButton">Browse Available</button>
-    </form>
-
 </div>
 
 

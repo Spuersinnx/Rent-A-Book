@@ -30,6 +30,7 @@ header nav ul li a {
     margin-right: 20px;
 }
 
+
 #bookshelf-image {
     height: 580px;
     width: auto;
@@ -84,9 +85,6 @@ header nav ul li a {
 }
 
 /* Account Form CSS*/
-fieldset {
-
-}
 .accountForm td {
     height: 3px;
 }
@@ -100,11 +98,12 @@ fieldset {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-
 }
-
 /* End of Account Form*/
 
+#genreMenu {
+    margin-left: 180px;
+}
 
 .menu-container {
     width: 200px;
@@ -220,29 +219,36 @@ div#search-Main {
 
 table.browseBooks {
     align-items: center;
-    margin-left: 220px;
-
-}
-table.browseBooks{
-    border: 1px solid;
-    border-collapse: collapse;
-
+    margin-left: 280px;
+    width: 100%;
 }
 
-
-tr.browseBooks {
-
-}
-
-th.browseBooks{
-    padding: 10px;
-    border: 1px solid;
-    border-collapse: collapse;
-}
 
 td.browseBooks {
-    padding: 10px;
+    padding-right: 120px;
+    padding-bottom: 30px;
     border: 1px solid;
+    border-collapse: collapse;
+}
+tr.browseBooks {
+    padding-bottom: 30px;
+}
+
+
+table.genreBooks {
+    align-items: center;
+    margin-left: 220px;
+    border-collapse: collapse;
+    border: none;
+}
+
+tr.genreBooks {
+    padding: 10px;
+
+}
+
+th.genreBooks{
+    padding: 10px;
     border-collapse: collapse;
 }
 
