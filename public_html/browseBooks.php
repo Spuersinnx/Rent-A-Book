@@ -39,8 +39,8 @@ $genreBooks = $statementGenre->fetchAll();
 </header>
 <hr>
 
-<form>
-    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <img src="img/content/cart.png"></h6>
+<form method="post" action="viewCart.php">
+    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <input type="image" title="View Cart" src="img/content/cart.png"></h6>
 </form>
 
 <table class="genreBooks">
@@ -50,7 +50,6 @@ $genreBooks = $statementGenre->fetchAll();
         <tr style=" padding: 10px;">
         <td style="padding: 10px; "><img src="'.$genreBook['bookImage'].'" width="150px" height="200px"></td>
         <td style="vertical-align: top; padding-top: 15px;"><a href="bookInfoRent.php?bookID='.$genreBook['bookID'].'" > '.$genreBook['bookName'].'</a>  by '.$genreBook['authorName'].'</td>
-        <input type="hidden" name="isSubmitted" value="1">
         </tr>
         ';
     }

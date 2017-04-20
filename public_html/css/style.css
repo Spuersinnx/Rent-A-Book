@@ -192,6 +192,41 @@ input[type=text], input[type=password] {
     width: 50%;
 }
 
+.rentButton {
+    background-color: #02b8dd;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-size: medium;
+    color: white;
+    margin-left: 250px;
+
+}
+
+.cartDeleteButton {
+    background-color: #888;
+
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-size: medium;
+    color: white;
+    margin-left: 0px;
+}
+
+.deleteButton {
+    background-color: dimgrey;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-size: medium;
+    color: white;
+    margin-left: 250px;
+
+}
+
 /*Search Page CSS */
 div#search-Main {
 
@@ -274,6 +309,20 @@ th.genreBooks{
     padding: 10px;
     border-collapse: collapse;
 }
+
+table#cartBooks {
+    margin-left: 100px;
+    border-top: 1px solid dimgrey;
+    margin-top: 20px;
+    width: 50%;
+}
+#cartBooks td {
+    border-bottom: 1px solid dimgrey;
+
+}
+
+
+
 
 /* Search page CSS end */
 

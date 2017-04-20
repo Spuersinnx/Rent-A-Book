@@ -2,12 +2,29 @@
 session_start();
 require_once ('../db/db_config.php');
 
+//get book Information
 $bookID = $_GET['bookID'];
 $queryBookInfo = 'SELECT * FROM books INNER JOIN author ON books.bookID = author.bookID  WHERE books.bookID = :bookID ';
 $statementBookID = $db->prepare($queryBookInfo);
 $statementBookID->bindValue(':bookID', $bookID);
 $statementBookID->execute();
 $bookInfo = $statementBookID->fetch();
+
+
+//if user clicked rent
+if(isset($_POST['rent'])) {
+
+    $_SESSION['cart'][] = array(
+
+        'bookID' => $bookInfo['bookID'],
+        'bookName' => $bookInfo['bookName'],
+        'bookAuthor' => $bookInfo['authorName'],
+        'bookImage' =>$bookInfo['bookImage']
+    );
+}
+
+//cart size
+$_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 
 
 ?>
@@ -42,8 +59,9 @@ $bookInfo = $statementBookID->fetch();
 </header>
 <hr>
 
-<form>
-    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <img src="img/content/cart.png"></h6>
+<form method="post" action="viewCart.php">
+    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <input type="image" title="View Cart" src="img/content/cart.png"></h6>
+    <input type="hidden" name="viewCart" value="1">
 </form>
 
 
@@ -52,14 +70,10 @@ $bookInfo = $statementBookID->fetch();
     <h4><?php echo $bookInfo['bookName']?></h4>
     <h5>by <?php echo $bookInfo['authorName']?></h5>
     <p> <?php echo nl2br($bookInfo['bookDescription'])?></p>
-    
+    <form action="" method="post">
+        <button type="submit" class="rentButton" name="rent">Rent</button>
+    </form>
 </div>
-
-
-
-
-
-
 
 
 
