@@ -68,7 +68,7 @@ header nav ul li a {
     float: left;
 }
 
-#bookInfo h4, h5 {
+#bookInfo h4 , h5 {
     margin-left: 250px;
     margin-top: 10px;
     text-transform: capitalize;
@@ -102,6 +102,11 @@ header nav ul li a {
 
 }
 
+caption.checkOut {
+    caption-side: bottom;
+    margin-right: 100px;
+    width: 100%;
+}
 .container {
     padding: 16px;
 }
@@ -315,10 +320,18 @@ table#cartBooks {
     border-top: 1px solid dimgrey;
     margin-top: 20px;
     width: 50%;
+    float: left;
 }
 #cartBooks td {
     border-bottom: 1px solid dimgrey;
 
+}
+
+table#cartCheckOut {
+    width: auto;
+    float: right;
+    margin-top: 0px;
+    margin-right: 200px;
 }
 
 

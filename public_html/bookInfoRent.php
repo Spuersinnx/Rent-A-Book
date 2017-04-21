@@ -21,6 +21,10 @@ if(isset($_POST['rent'])) {
         'bookAuthor' => $bookInfo['authorName'],
         'bookImage' =>$bookInfo['bookImage']
     );
+
+    $_SESSION['subTotal'] += 15;
+    $_SESSION['taxes'] = (0.07 * $_SESSION['subTotal']);
+    $_SESSION['total'] = ($_SESSION['subTotal'] + $_SESSION['taxes']);
 }
 
 //cart size
@@ -67,7 +71,7 @@ $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 
 <div id="bookInfo">
     <img src="<?php echo $bookInfo['bookImage']?> " width="200px" height="300px">
-    <h4><?php echo $bookInfo['bookName']?></h4>
+    <h4 style="margin-right: 80px;"><?php echo $bookInfo['bookName']?></h4>
     <h5>by <?php echo $bookInfo['authorName']?></h5>
     <p> <?php echo nl2br($bookInfo['bookDescription'])?></p>
     <form action="" method="post">
