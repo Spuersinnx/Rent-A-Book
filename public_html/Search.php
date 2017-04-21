@@ -21,6 +21,7 @@ if(isset($_COOKIE['userSearch'])){
 <!--Main Search Form Content Image-->
 <div id="search-Main">
 
+    .
 
     <!-- May move to external db_search.php -->
     <form id="search-form" action="../db/db_search.php" method="post">
