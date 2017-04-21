@@ -11,8 +11,6 @@ $userSearch = filter_input(INPUT_POST, "userSearch");
 if(isset($userSearch)) {
     $expire = strtotime("+1 year");
     setcookie('userSearch', $userSearch, $expire, '/');
-}else {
-    $userSearch = null;
 }
 #Changes characters in html to their equivalent forms
 #$userSearch = htmlspecialchars($userSearch);

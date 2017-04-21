@@ -4,6 +4,9 @@
 if(isset($_COOKIE['userSearch'])){
 
     $userSearch = $_COOKIE['userSearch'];
+}else{
+
+    $userSearch = null;
 }
 
 ?>
@@ -20,10 +23,8 @@ if(isset($_COOKIE['userSearch'])){
 
 <!--Main Search Form Content Image-->
 <div id="search-Main">
-
-    .
-
-    <!-- May move to external db_search.php -->
+    
+    <!-- Content -->
     <form id="search-form" action="../db/db_search.php" method="post">
 
         <label><b>Search:</b>
