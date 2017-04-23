@@ -10,21 +10,32 @@ $statementBookID->bindValue(':bookID', $bookID);
 $statementBookID->execute();
 $bookInfo = $statementBookID->fetch();
 
+$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 
 //if user clicked rent
 if(isset($_POST['rent'])) {
 
-    $_SESSION['cart'][] = array(
-
+    $bookItem = array (
         'bookID' => $bookInfo['bookID'],
         'bookName' => $bookInfo['bookName'],
         'bookAuthor' => $bookInfo['authorName'],
         'bookImage' =>$bookInfo['bookImage']
     );
 
-    $_SESSION['subTotal'] += 15;
-    $_SESSION['taxes'] = (0.07 * $_SESSION['subTotal']);
-    $_SESSION['total'] = ($_SESSION['subTotal'] + $_SESSION['taxes']);
+
+    //checks if item is already in cart, allows user to rent one of each book only
+    if(in_array($bookItem, $_SESSION['cart'])) {
+            $cartError = 'Item already in cart';
+    }
+
+    else {
+            $cartError = '';
+            $_SESSION['cart'][] = $bookItem;
+            $_SESSION['subTotal'] += 10;
+            $_SESSION['taxes'] = (0.07 * $_SESSION['subTotal']);
+            $_SESSION['total'] = ($_SESSION['subTotal'] + $_SESSION['taxes']);
+    }
+
 }
 
 //cart size
@@ -77,7 +88,10 @@ $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
     <form action="" method="post">
         <button type="submit" class="rentButton" name="rent">Rent</button>
     </form>
+    <?php echo '<p style="color: red"> '.$cartError.'</p>';?>
+
 </div>
+
 
 
 

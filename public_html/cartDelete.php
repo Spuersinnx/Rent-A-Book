@@ -8,7 +8,7 @@ foreach ($_SESSION['cart'] as $cartItem=>$book) {
     if($book['bookID'] == $bookID) {
         unset($_SESSION['cart'][$cartItem]);
         $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
-        $_SESSION['subTotal'] -= 15;
+        $_SESSION['subTotal'] -= 10;
 
     }
     $_SESSION['taxes'] = (0.07 * $_SESSION['subTotal']);

@@ -232,6 +232,10 @@ input[type=text], input[type=password] {
 
 }
 
+.paragraphFAQ {
+    margin-left: 250px;"
+}
+
 /*Search Page CSS */
 div#search-Main {
 
@@ -299,7 +303,7 @@ tr.browseBooks {
 
 table.genreBooks {
     align-items: center;
-    margin-left: 220px;
+    margin-left: 140px;
     margin-bottom: 100px;
     border-collapse: collapse;
     border: none;
