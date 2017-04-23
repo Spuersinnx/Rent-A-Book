@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once('../db/db_config.php');
+$cartItemArray = array();
 
 ?>
 
 
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Rent a Book</title>
+    <title>Check Out</title>
     <link type="text/css" rel="stylesheet" href="css/mainstyle.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
@@ -33,6 +34,7 @@ require_once('../db/db_config.php');
 </header>
 <hr>
 
+
 <h5 style="margin-left: 100px;">Shopping Cart</h5>
 <table id="cartBooks" ">
     <?php
@@ -50,15 +52,13 @@ require_once('../db/db_config.php');
     <td><button type="submit" class="cartDeleteButton" name="rent" >Delete</button></td>
     </form>
  <!--save for later-->
-    <td><button type="submit" class="cartDeleteButton" name="save" >Save for Later</button></td>
-   </tr>
     
-   
-
+   </tr>
    
    ';}
 
    echo'
+   <form action="checkOut.php" method="post">
    <table id="cartCheckOut">
    <tr>
    <td>Subtotal('.$_SESSION['cartSize'].' Items): </td>
@@ -73,17 +73,30 @@ require_once('../db/db_config.php');
    <tr>
    <td>Total: </td>
    <td style="padding-left: 10px;"> $'.$_SESSION['total'].' </td>
+   </tr>';
+
+   foreach ($_SESSION['cart'] as $cartItem) {
+       echo '<input type="hidden" name="bookID" value="' . $cartItem['bookID'] . '">';
+       $cartItemArray[] = $cartItem['bookID'];
+
+
+   }
+   $_SESSION['cartCheckOut'] = $cartItemArray;
+
+    echo '
+   
+   <tr>
+   <td style="padding-top: 10px; padding-right: 40px;"><button type="submit" class="cartDeleteButton" name="checkOut" style="background-color: #02b8dd;" >Check Out</button></td>
    </tr>
+   </form>
    </table>
    
    
    ';
+
+
 ?>
 
-
-
-
-</table>
 
 
 </body>

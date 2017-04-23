@@ -31,7 +31,9 @@ $genres = $statementGenre->fetchAll();
         <nav>
             <form action="logout.php" method="POST">
                 <ul>
+                    <li><a href="faq.php"> Rental Policy </a></button></li>
                     <li><a href="account.php"> My Account</a></li>
+
 
                     <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
                 </ul>

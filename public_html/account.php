@@ -27,6 +27,8 @@ session_start();
 
                 </li>
 
+
+
             </ul>
 
         </nav>
@@ -40,7 +42,7 @@ session_start();
 </div>
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
-    <h5 >Profile Information</h5>
+    <h5 style="margin-left: 0px;" >Profile Information</h5>
 <form class="accountForm" action="" method="post">
 
     <table>
@@ -63,7 +65,7 @@ session_start();
 </div>
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
-        <h5>Billing Information</h5>
+        <h5 style="margin-left: 0px;" >Billing Information</h5>
 
         <table>
             <tr>
