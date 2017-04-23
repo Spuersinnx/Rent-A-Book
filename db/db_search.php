@@ -40,7 +40,7 @@ if($genreFilter == null) {
 
 #Put the user's search results in an array
     $userResults = $searchQuery->fetchAll();
-    print_r($userResults);
+
 
     if($userResults == 0){
 
@@ -65,7 +65,7 @@ if($genreFilter != null){
 
    $filterSearchQuery->execute();
     $userResults = $filterSearchQuery->fetchAll();
-   print_r($userResults);
+   
 
     if($userResults == 0){
 
