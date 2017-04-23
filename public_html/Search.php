@@ -15,7 +15,6 @@ $genreSelect = $db->prepare("SELECT *
                                       FROM genre");
 $genreSelect->execute();
 $genres = $genreSelect->fetchAll();
-print_r($genres);
 
 ?>
 
@@ -38,14 +37,13 @@ print_r($genres);
         <label><b>Search:</b>
             <input type="text" name="userSearch" value="<?= $userSearch ?>"></label>
         <label><b>Filter by Genre: </b>
-        <select>
+        <select name="genreFilter">
             <option value="<?=null?>" selected="selected">None</option>
             <?php foreach($genres as $genre) : ?>
-            <option value="<?= $genre['genreName']?>"><?=$genre['genreName']?></option>
-
+            <option value="<?= $genre['genreID']?>"><?=$genre['genreName']?></option>
+            <?php endforeach; ?>
         </select></label><br />
-        <input type="hidden" name="genreID" value="<?=$genre['genreID']?>">
-        <?php endforeach; ?>
+
         <button type="submit" id="search-button" class="searchButton">Search</button>
     </form>
 
