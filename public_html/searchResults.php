@@ -3,7 +3,6 @@ session_start();
 $userResults = $_SESSION['userResults'];
 
 
-
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
@@ -39,15 +38,14 @@ $userResults = $_SESSION['userResults'];
 
     <?php foreach ($userResults as $results) : ?>
 
-    <tr style=" padding: 10px;">
-        <td style="padding: 10px; "><img src="<?= $results['bookImage'] ?>" width="150px" height="200px"></td>
-        <td style="vertical-align: top; padding-top: 15px;"><a
-                    href="bookInfoRent.php?bookID=<?= $results['bookID'] ?>"><?= $results['bookName'] ?></a>
-            by <?= $results['authorName'] ?></td>
-    </tr>
+        <tr style=" padding: 10px;">
+            <td style="padding: 10px; "><img src="<?= $results['bookImage'] ?>" width="150px" height="200px"></td>
+            <td style="vertical-align: top; padding-top: 15px;"><a
+                        href="bookInfoRent.php?bookID=<?= $results['bookID'] ?>"><?= $results['bookName'] ?></a>
+                by <?= $results['authorName'] ?></td>
+        </tr>
     <?php endforeach; ?>
 </table>
-
 
 
 <footer>
