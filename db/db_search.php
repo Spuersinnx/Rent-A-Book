@@ -31,7 +31,7 @@ if (isset($userSearch)) {
 #IF Genre Filter is not Selected
 if($genreFilter == null) {
 #Queries for searching the database for books
-    $searchQuery = $db->prepare("SELECT b.bookID, b.bookName, b.ISBN, b.genreID, a.authorID, a.authorName
+    $searchQuery = $db->prepare("SELECT b.bookID, b.bookName, b.ISBN, b.genreID, b.bookImage, a.authorID, a.authorName
                                         FROM books b INNER JOIN author a ON (b.bookID = a.bookID)
                                         WHERE b.bookname LIKE '%$userSearch%'
                                         OR b.ISBN LIKE '%$userSearch%'
@@ -54,7 +54,7 @@ if($genreFilter == null) {
 if($genreFilter != null){
 
     $genre = $genreName[0];
-   $filterSearchQuery = $db->prepare("SELECT b.bookID, b.bookName, b.ISBN, b.genreID, a.authorID, a.authorName
+   $filterSearchQuery = $db->prepare("SELECT b.bookID, b.bookName, b.ISBN, b.genreID, b.bookImage, a.authorID, a.authorName
                                                 FROM books b INNER JOIN author a ON (b.bookID = a.bookID)
                                                             INNER JOIN genre g ON (b.genreID = g.genreID)
                                                 WHERE g.genreName = '$genre'
