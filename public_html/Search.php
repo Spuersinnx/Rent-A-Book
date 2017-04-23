@@ -1,5 +1,7 @@
 <?php
 
+require_once("../db/db_config.php");
+
 #Check if cookie is set
 if (isset($_COOKIE['userSearch'])) {
 
@@ -12,7 +14,8 @@ if (isset($_COOKIE['userSearch'])) {
 $genreSelect = $db->prepare("SELECT *
                                       FROM genre");
 $genreSelect->execute();
-$genres = $genreSelect;
+$genres = $genreSelect->fetchAll();
+print_r($genres);
 
 ?>
 
@@ -34,13 +37,13 @@ $genres = $genreSelect;
 
         <label><b>Search:</b>
             <input type="text" name="userSearch" value="<?= $userSearch ?>"></label>
-        <label><b>Filter by Genre: </b></label>
+        <label><b>Filter by Genre: </b>
         <select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select>
+            <option value="<?=null?>" selected="selected">None</option>
+            <?php foreach($genres as $genre) : ?>
+            <option value="<?= $genre['genreName']?>"><?=$genre['genreName']?></option>
+            <?php endforeach; ?>
+        </select></label><br />
 
         <button type="submit" id="search-button" class="searchButton">Search</button>
     </form>
