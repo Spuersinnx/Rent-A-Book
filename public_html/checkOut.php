@@ -6,7 +6,7 @@ require_once ('../db/db_config.php');
 //find books in bookitem with bookID identical to cart books
 foreach ($_SESSION['cartCheckOut'] as $cartItem=>$bookID) {
 
-    $queryBooks = "SELECT bookID FROM bookItem WHERE bookID IN (".implode(',',$_SESSION['cartCheckOut']).")";
+    $queryBooks = "SELECT * FROM bookItem WHERE bookID IN (".implode(',',$_SESSION['cartCheckOut']).")";
     $statementQueryBooks = $db->prepare($queryBooks);
     $statementQueryBooks->execute();
     $matchedBookID = $statementQueryBooks->fetchAll();
@@ -17,16 +17,24 @@ foreach ($matchedBookID as $matchedID) {
     $IDs[] = $matchedID['bookID'];
 }
 
-$matchedArray = implode(',', $IDs);
-echo $matchedArray;
+print_r($IDs);
+
+//make books unavailable
+//$querySetAvailability = "UPDATE bookItem SET available = 'no' WHERE bookID IN (".implode(',',$IDs).") ";
+//$statementAvailability = $db->prepare($querySetAvailability);
+//$statementAvailability->execute();
+
+//charge credit card
+$queryCredit = "SELECT * FROM card WHERE userID = '". $_SESSION['userID']."' ";
+$statementCredit = $db->prepare($queryCredit);
+$statementCredit->execute();
+$userCard = $statementCredit->fetchAll();
+
+$date=gmdate('d.m.y h:i:s');
 
 
-$querySetAvailability = "UPDATE bookItem SET available = 'no' WHERE available IN( SELECT TOP 1 FROM bookItem WHERE bookID IN (".implode(',',$IDs).") )  ";
 
-
-//WHERE bookID IN (".implode(',',$IDs).")";
-$statementAvailability = $db->prepare($querySetAvailability);
-$statementAvailability->execute();
+//$insertRentalQuery = "INSERT INTO rentals (userID, startDate, endDate, bookItemID) VALUES('". $_SESSION['userID']."', '".$date."',  )"
 
 
 

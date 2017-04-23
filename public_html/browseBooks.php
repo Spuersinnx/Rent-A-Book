@@ -10,7 +10,7 @@ $statementGenre->bindValue(':genreID', $getGenre);
 $statementGenre->execute();
 $genreBooks = $statementGenre->fetchAll();
 
-
+$_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 
 ?>
 
