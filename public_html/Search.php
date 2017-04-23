@@ -9,6 +9,11 @@ if (isset($_COOKIE['userSearch'])) {
     $userSearch = null;
 }
 
+$genreSelect = $db->prepare("SELECT *
+                                      FROM genre");
+$genreSelect->execute();
+$genres = $genreSelect;
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -29,6 +34,14 @@ if (isset($_COOKIE['userSearch'])) {
 
         <label><b>Search:</b>
             <input type="text" name="userSearch" value="<?= $userSearch ?>"></label>
+        <label><b>Filter by Genre: </b></label>
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+
         <button type="submit" id="search-button" class="searchButton">Search</button>
     </form>
 
