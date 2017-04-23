@@ -40,12 +40,7 @@ if($genreFilter == null) {
 
 #Put the user's search results in an array
     $userResults = $searchQuery->fetchAll();
-    print_r($userResults);
 
-    if($userResults == 0){
-
-        echo "No results were found that matched your search...";
-    }
     #Create SESSION variable for userResults to move to next page
     $_SESSION['userResults'] = $userResults;
 }
@@ -65,12 +60,8 @@ if($genreFilter != null){
 
    $filterSearchQuery->execute();
     $userResults = $filterSearchQuery->fetchAll();
-   print_r($userResults);
 
-    if($userResults == 0){
 
-        echo "No results were found that matched your search...";
-    }
 
     #Create SESSION variable for userResults to move to next page
     $_SESSION['userResults'] = $userResults;

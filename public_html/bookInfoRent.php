@@ -41,7 +41,6 @@ if(isset($_POST['rent'])) {
 //cart size
 $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 
-
 ?>
 
 
