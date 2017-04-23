@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("db_config.php");
 
 #We assume that the input text box will have the name="userSearch"
@@ -7,6 +7,7 @@ require_once("db_config.php");
 #Get Post variables from search form
 $userSearch = filter_input(INPUT_POST, "userSearch");
 $genreFilter = filter_input(INPUT_POST, "genreFilter");
+
 
 #Use Genre ID to get GenreName
 $genreNameQuery = $db->prepare("SELECT genreName
@@ -40,6 +41,13 @@ if($genreFilter == null) {
 #Put the user's search results in an array
     $userResults = $searchQuery->fetchAll();
     print_r($userResults);
+
+    if($userResults == 0){
+
+        echo "No results were found that matched your search...";
+    }
+    #Create SESSION variable for userResults to move to next page
+    $_SESSION['userResults'] = $userResults;
 }
 
 #If Genre Filter is Selected
@@ -56,10 +64,26 @@ if($genreFilter != null){
                                                     )");
 
    $filterSearchQuery->execute();
-   $filterUserResults = $filterSearchQuery->fetchAll();
-   print_r($filterUserResults);
+    $userResults = $filterSearchQuery->fetchAll();
+   print_r($userResults);
+
+    if($userResults == 0){
+
+        echo "No results were found that matched your search...";
+    }
+
+    #Create SESSION variable for userResults to move to next page
+    $_SESSION['userResults'] = $userResults;
 
 }
+
+header("Location:../public_html/searchResults.php");
+
+?>
+
+
+
+
 
 
 

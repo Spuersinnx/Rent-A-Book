@@ -35,7 +35,7 @@ $genres = $genreSelect->fetchAll();
     <form id="search-form" action="../db/db_search.php" method="post">
 
         <label><b>Search:</b>
-            <input type="text" name="userSearch" value="<?= $userSearch ?>"></label>
+            <input type="text" name="userSearch" value="<?= $userSearch ?>" required></label>
         <label><b>Filter by Genre: </b>
         <select name="genreFilter">
             <option value="<?=null?>" selected="selected">None</option>
