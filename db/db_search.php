@@ -65,7 +65,7 @@ if($genreFilter != null){
 
    $filterSearchQuery->execute();
     $userResults = $filterSearchQuery->fetchAll();
-   
+
 
     if($userResults == 0){
 
