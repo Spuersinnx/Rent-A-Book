@@ -77,13 +77,18 @@ else {
         <?php
         foreach ($rentals as $rental) {
             echo '
+            <form action="returnRental.php" method="post">
             <tr>
             <td>'.$rental['bookName'].'</td>
             <td>'.$rental['ISBN'].'</td>
             <td>'.$rental['startDate'].'</td>
             <td>'.$rental['endDate'].'</td>
+            <input type="hidden" name="rentalID" value="'.$rental['bookItemID'].'">
+           
             <td><button type="submit" class="cartDeleteButton" name="return" style="padding: 5px;" >Return</button></td>
+            
             </tr>
+            </form>
             
             ';
         }
