@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once ('../db/db_config.php');
+
+$queryStates = "SELECT * FROM state";
+$statementStates = $db->prepare($queryStates);
+$statementStates->execute();
+$states = $statementStates->fetchAll();
 
 
 ?>
@@ -61,20 +67,60 @@ session_start();
         <tr>
 
         </tr>
-    </table>
+
 </div>
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
-        <h5 style="margin-left: 0px;" >Billing Information</h5>
 
-        <table>
-            <tr>
+    <tr><td></td></tr>
+    <tr><td><h5 style="margin-left: 0px;">Billing Information</h5></td></tr>
+    <tr>
+                <td>Name: </td>
+                <td><input type="text" name="cardName" value="<?php echo $_SESSION['cardName'];?>"></td>
                 <td>Credit Card Number: </td>
-                <td><input type="text" value=""></td>
+                <td><input type="text" name="cardNumber" value="<?php echo $_SESSION['cardNumber'];?>"></td>
+                <td>Expiration Date: </td>
+                <td><input type="text" name="cardDate" value="<?php echo $_SESSION['cardDate'];?>"></td>
+
             </tr>
-        </table>
+
 </div>
 
+<div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
+
+    <tr><td></td></tr>
+    <tr><td><h5 style="margin-left: 0px;">Address Information</h5></td></tr>
+    <tr>
+        <td>Address:</td>
+        <td><input type="text" name="address" value="<?php echo $_SESSION['address']; ?>"></td>
+        <td>City: </td>
+        <td><input type="text" name="city" value="<?php echo $_SESSION['cityName'] ?>"></td>
+        <td>State: </td>
+        <td>
+            <select name="state">
+            <?php
+            foreach ($states as $state) {
+
+                if ($state['stateName'] == $_SESSION['stateName']) {
+                    echo '
+                    <option selected="selected">'.$_SESSION['stateName'].'</option>
+                    ';
+                }
+                else {
+                    echo '<option>'.$state['stateName'].'</option>';
+                }
+            }
+
+            ?>
+            </select>
+        </td>
+
+
+    </tr>
+    </table>
+</div>
+
+<button type="submit" class="cartDeleteButton" name="checkOut" style="background-color: #02b8dd; margin-left: 180px; padding: 14px 30px; ">Save</button>
 </form>
 
 
