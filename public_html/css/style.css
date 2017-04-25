@@ -345,12 +345,12 @@ table#cartCheckOut {
 }
 
 table#rentals td {
-    padding-right: 15px;
+    padding-left: 15px;
 }
 
 
 table#rentals{
-    width: auto;
+    width: 40%;
 
     margin-top: 0px;
     margin-left: 280px;
