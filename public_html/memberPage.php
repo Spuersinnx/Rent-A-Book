@@ -14,7 +14,20 @@ $statementGenre = $db->prepare($queryGenres);
 $statementGenre->execute();
 $genres = $statementGenre->fetchAll();
 
+$queryRental = "SELECT * FROM rentals INNER JOIN bookItem on bookItem.bookItemID = rentals.bookItemID INNER JOIN books ON books.bookID = bookItem.bookID WHERE rentals.userID = '". $_SESSION['userID']."' ";
+$statementRental = $db->prepare($queryRental);
+$statementRental->execute();
+$rentals = $statementRental->fetchAll();
+//print_r($rentals);
 
+
+if(count($rentals) > 0) {
+ $noRental = '';
+
+}
+else {
+    $noRental = 'You have no rentals at this time';
+}
 ?>
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -54,8 +67,35 @@ $genres = $statementGenre->fetchAll();
 
 <div class="menu-container2">
     <h3>My Books</h3>
+
+    <h5 style="margin-left: 600px; color: #777777"><?php echo $noRental?></h5>
+    <table id="rentals">
+        <th>Book</th>
+        <th>ISBN</th>
+        <th>Date Rented</th>
+        <th>Date Due</th>
+        <?php
+        foreach ($rentals as $rental) {
+            echo '
+            <form action="returnRental.php" method="post">
+            <tr>
+            <td>'.$rental['bookName'].'</td>
+            <td>'.$rental['ISBN'].'</td>
+            <td>'.$rental['startDate'].'</td>
+            <td>'.$rental['endDate'].'</td>
+            <input type="hidden" name="rentalID" value="'.$rental['bookItemID'].'">
+           
+            <td><button type="submit" class="cartDeleteButton" name="return" style="padding: 5px;" >Return</button></td>
+            
+            </tr>
+            </form>
+            
+            ';
+        }
+        ?>
+    </table>
 </div>
-<hr>
+
 
 <div class="menu-container2">
 </div>

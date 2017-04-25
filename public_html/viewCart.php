@@ -49,7 +49,7 @@ $cartItemArray = array();
 <!--delete from cart-->
    <form method="post" action="cartDelete.php">
    <input type="hidden" name="bookID" value="' . $cartItem['bookID'] . '">
-    <td><button type="submit" class="cartDeleteButton" name="rent" >Delete</button></td>
+    <td><button type="submit" class="cartDeleteButton" name="delete" >Delete</button></td>
     </form>
  <!--save for later-->
     

@@ -314,6 +314,7 @@ tr.genreBooks {
 
 }
 
+
 th.genreBooks{
     padding: 10px;
     border-collapse: collapse;
@@ -339,6 +340,14 @@ table#cartCheckOut {
 }
 
 
+table#rentals {
+    width: 100%;
+    align-self: center;
+}
+
+#rentals td {
+    align-self: center;
+}
 
 
 /* Search page CSS end */
