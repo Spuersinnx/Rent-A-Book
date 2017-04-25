@@ -1,5 +1,6 @@
 header {
     height: 120px;
+    background-color: #f8fafa;
 }
 
 header h1 {
@@ -239,11 +240,12 @@ input[type=text], input[type=password] {
 /*Search Page CSS */
 div#search-Main {
 
-    background-color: #fefefe;
+
     /* For center align */
     margin: 0 auto;
     /* For grow & shrink as per screen size change */
-    width: 70%;
+    width: 100%;
+    background: url('../img/content/bookshelf.jpeg') no-repeat top center;
 }
 
 #search-img {
@@ -260,13 +262,13 @@ div#search-Main {
 .searchButton {
 
     background-color: #02b8dd;
-    width: 45%;
+    width: 25%;
     border: none;
     cursor: pointer;
     padding: 14px 20px;
     margin: 8px 25%;
     margin-right: 1px;
-    font-size: medium;
+    font-size: large;
     color: white;
 
 }
@@ -285,16 +287,18 @@ div#search-Main {
 
 table.browseBooks {
     align-items: center;
-    margin-left: 280px;
-    width: 100%;
+    margin-left: 35%;
+    width: 50%;
+    font-size: large;
 }
 
 
 td.browseBooks {
-    padding-right: 120px;
+    padding-right: 0px;
     padding-bottom: 30px;
     border: 1px solid;
     border-collapse: collapse;
+
 }
 tr.browseBooks {
     padding-bottom: 30px;
@@ -337,16 +341,23 @@ table#cartCheckOut {
     float: right;
     margin-top: 0px;
     margin-right: 200px;
+
+}
+
+table#rentals td {
+    padding-left: 15px;
 }
 
 
-table#rentals {
-    width: 100%;
-    align-self: center;
+table#rentals{
+    width: 40%;
+
+    margin-top: 0px;
+    margin-left: 280px;
 }
 
-#rentals td {
-    align-self: center;
+#table td {
+    padding: 20px;
 }
 
 

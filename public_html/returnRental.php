@@ -22,6 +22,6 @@ $statementDelete = $db->prepare($queryDelete);
 $statementDelete->bindValue(':rentalID', $rentalID);
 $statementDelete->execute();
 
-header("location:memberPage.php");
+header("location:myRentals.php");
 
 ?>

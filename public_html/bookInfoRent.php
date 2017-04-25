@@ -36,6 +36,10 @@ if(isset($_POST['rent'])) {
             $_SESSION['total'] = ($_SESSION['subTotal'] + $_SESSION['taxes']);
     }
 
+
+
+
+
 }
 
 //cart size

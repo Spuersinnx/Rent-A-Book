@@ -71,6 +71,10 @@ session_start();
                                 alert('Invalid Credentials');
                             }
 
+                            else if(email == 'admin@admin.com') {
+                                window.location = ("adminPage.php");
+                            }
+
                             else {
                                 window.location = ("memberPage.php");
                             }
@@ -192,7 +196,7 @@ session_start();
             <input type="password" placeholder="Enter Password" id="newPsw" name="newPsw" required>
 
             <div id="pswdInfo">
-                <h5>Password must meet the following requirements:</h5>
+                <h5 style="margin-left: 0px;">Password must meet the following requirements:</h5>
                 <ul>
                     <li id="letter" class="invalid">At least <strong>one letter</strong></li>
                     <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>

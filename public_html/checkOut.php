@@ -97,8 +97,8 @@ else {
 <hr>
 
 <h4 align="center">Thank you, <?php  echo $_SESSION['firstName']?> </h4>
-<p align="center">Your credit card ending with <strong><?php echo $lastFour;?></strong> , has been charged with a total of $<?php $_SESSION['total']?></p>
-<p align="center">To view your due date for this rental, please check your home page under the My Books Section.</p>
+<p align="center">Your credit card ending with <strong><?php echo $lastFour;?></strong> , has been charged.</p>
+<p align="center">To view your due date for this rental, please check your My Rentals page.</p>
 </body>
 </html>
 
