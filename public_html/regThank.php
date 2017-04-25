@@ -5,7 +5,7 @@
  * Date: 3/17/17
  * Time: 4:46 PM
  */
-
+header('Refresh: 5; http://localhost:8888/Rent-A-Book/public_html/index.php');
 
 ?>
 
@@ -22,13 +22,13 @@
 <div class="wrapper">
 
 <div class="message">
-<h4>Thank You For Joining Rent a Book</h4>
+<h4 style="margin-left: 220px;">Thank You For Joining Rent a Book</h4>
 </div>
 </div>
 </header>
 
 
-<p> Please check your mailbox and confirm your email to activate your Rent a Book membership!</p>
+<p style="margin-left: 660px;">You will now be redirected to our homepage to login</p>
 
 
 

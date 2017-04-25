@@ -14,20 +14,7 @@ $statementGenre = $db->prepare($queryGenres);
 $statementGenre->execute();
 $genres = $statementGenre->fetchAll();
 
-$queryRental = "SELECT * FROM rentals INNER JOIN bookItem on bookItem.bookItemID = rentals.bookItemID INNER JOIN books ON books.bookID = bookItem.bookID WHERE rentals.userID = '". $_SESSION['userID']."' ";
-$statementRental = $db->prepare($queryRental);
-$statementRental->execute();
-$rentals = $statementRental->fetchAll();
-//print_r($rentals);
 
-
-if(count($rentals) > 0) {
- $noRental = '';
-
-}
-else {
-    $noRental = 'You have no rentals at this time';
-}
 ?>
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -44,8 +31,8 @@ else {
         <nav>
             <form action="logout.php" method="POST">
                 <ul>
-                    <li><a href="faq.php"> Rental Policy </a></button></li>
-                    <li><a href="account.php"> My Account</a></li>
+                    <li><a href="myRentals.php" > My Rentals </a></button></li>
+                    <li><a href="account.php"> <?php echo $_SESSION['firstName']?>'s Account</a></li>
 
 
                     <li><a href="#" onclick="document.forms[0].submit();"> Log Out</a></li>
@@ -56,63 +43,12 @@ else {
 </header>
 
 <!--Main background Image-->
-<div id="books-image">
-    <h2>Welcome Back</h2>
-</div>
-
-<div class="menu-container">
-    <img src="img/content/user.png">
-    <p><?php echo $firstName . ' ' . $lastName ?></p>
-</div>
-
-<div class="menu-container2">
-    <h3>My Books</h3>
-
-    <h5 style="margin-left: 600px; color: #777777"><?php echo $noRental?></h5>
-    <table id="rentals">
-        <th>Book</th>
-        <th>ISBN</th>
-        <th>Date Rented</th>
-        <th>Date Due</th>
-        <?php
-        foreach ($rentals as $rental) {
-            echo '
-            <form action="returnRental.php" method="post">
-            <tr>
-            <td>'.$rental['bookName'].'</td>
-            <td>'.$rental['ISBN'].'</td>
-            <td>'.$rental['startDate'].'</td>
-            <td>'.$rental['endDate'].'</td>
-            <input type="hidden" name="rentalID" value="'.$rental['bookItemID'].'">
-           
-            <td><button type="submit" class="cartDeleteButton" name="return" style="padding: 5px;" >Return</button></td>
-            
-            </tr>
-            </form>
-            
-            ';
-        }
-        ?>
-    </table>
-</div>
-
-
-<div class="menu-container2">
-</div>
-<hr>
-
-<div class="menu-container2">
-    <h3>Rent a book</h3>
-</div>
-
 <div class="menu-container2">
     <?php include 'Search.php' ?>
 </div>
 
-<hr>
-
 <div class="menu-container2">
-    <h3>Browse Books</h3>
+    <h3>Browse Genres</h3>
 
     <table class="browseBooks">
         <?php
@@ -122,7 +58,7 @@ else {
 
             echo '
             <form class="browseBooks" action="browseBooks.php" method="post">
-            <td><a href="browseBooks.php?genreID='.$genre['genreID'].'" >'.$genre['genreName'].'</a>  books</td>
+            <td><a href="browseBooks.php?genreID='.$genre['genreID'].'" >'.$genre['genreName'].'</a> </td>
             <input type="hidden" name="genreID" value="'.$genre['genreID'].'">
            
             ';
@@ -135,8 +71,12 @@ else {
 
         } ?>
     </table>
-
+<br><br><br>
 </div>
+
+
+
+
 
 
 <footer>

@@ -7,6 +7,7 @@ $errorMsg[] = '';
     $userEmail = $_POST['email'];
     $password = $_POST['password'];
 
+
     //check if password is correct
     $queryUsername = "SELECT userEmail FROM users WHERE userEmail =:userEmail";
     $statementUsername = $db->prepare($queryUsername);
@@ -27,11 +28,14 @@ $errorMsg[] = '';
        $errorMsg[] = '';
     }
 
-    else {
-        $errorMsg[] = 'Invalid Credentials';
+    elseif($userName =='admin@admin.com') {
+       header("location:adminPage.php");
     }
 
 
+    else {
+        $errorMsg[] = 'Invalid Credentials';
+    }
     $_SESSION['login.Error'] = array_filter($errorMsg);
 
     //get user info, and display
@@ -43,6 +47,7 @@ $errorMsg[] = '';
         $userInfo = $statementUser->fetch();
 
 
+        $_SESSION['userName'] = $userInfo['userEmail'];
         $_SESSION['firstName'] = $userInfo['firstName'];
         $_SESSION['lastName'] = $userInfo['lastName'];
         $_SESSION['userID'] = $userInfo['userID'];

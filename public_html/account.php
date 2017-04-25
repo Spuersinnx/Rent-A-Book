@@ -7,7 +7,6 @@ $statementStates = $db->prepare($queryStates);
 $statementStates->execute();
 $states = $statementStates->fetchAll();
 
-
 ?>
 
 
@@ -49,7 +48,7 @@ $states = $statementStates->fetchAll();
 
 <div class="menu-container2" style="float: left; margin-left: 180px; width: 100%; text-align: left;">
     <h5 style="margin-left: 0px;" >Profile Information</h5>
-<form class="accountForm" action="" method="post">
+<form class="accountForm" action="getAccount.php" method="post">
 
     <table>
        <tr>
@@ -119,7 +118,12 @@ $states = $statementStates->fetchAll();
     </tr>
     </table>
 </div>
+<?php
+foreach ($_SESSION['accountError'] as $sessionError) {
+    echo '<p style="color: red; margin-left: 180px;"> '.$sessionError.'</p>';
+}
 
+?>
 <button type="submit" class="cartDeleteButton" name="checkOut" style="background-color: #02b8dd; margin-left: 180px; padding: 14px 30px; ">Save</button>
 </form>
 
