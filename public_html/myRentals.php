@@ -50,72 +50,71 @@ $archived = $statementArchived->fetchAll();
     </div>
 </header>
 
-<body>
-<div class="menu-container2">
-    <h3 style="margin-right: 680px;">My Rentals</h3>
 
-    <table id="rentals">
-        <tr>
-        <th>Book</th>
-        <th></th>
-        <th style="margin-left: 20px;">Date Due</th>
-            <th></th>
-        </tr>
+<table id="cartBooks" ">
+<caption><h5 style="margin-left: auto;">My Rentals</h5></caption>
+<?php
+foreach ($rentals as $rental) {
 
-        <?php
-        foreach ($rentals as $rental) {
-            echo '
-            <form action="returnRental.php" method="post">
-            <tr>
-            <td style="width: 80px;"><img src=" ' . $rental['bookImage']. '" width="75px" height="112px"></td>
-            <td style=" vertical-align:top; ">'.$rental['bookName'].'</td>
-            <td style="vertical-align:top; padding-left: 50px;">'.$rental['endDate'].'</td>
-            <input type="hidden" name="rentalID" value="'.$rental['bookItemID'].'">
+    echo ' 
+   <form action="returnRental.php" method="post">
+   <tr>
+   <td style="width: 80px;"><img src=" ' . $rental['bookImage'] . '" width="75px" height="112px"></td>
+   <td style="vertical-align: top; padding-top: 5px;">' . $rental['bookName'].'</td>
+    <td style="vertical-align: top; padding-top: 5px;">Due on '.$rental['endDate'].'</td>
+  
+   
+
+   <input type="hidden" name="rentalID" value="'.$rental['bookItemID'].'">
            
-            <td style="vertical-align:top;"><button type="submit" class="cartDeleteButton" name="return" style="padding: 10px; " >Return</button></td>
+   <td><button type="submit" class="cartDeleteButton" name="return" style="vertical-align: top; padding: 5px;" >Return</button></td>
             
-            </tr>
-            </form>
-            
-            ';
-        }
-        ?>
-    </table>
-</div>
+    </tr>
+    </form>
+    
 
-<div class="menu-container2">
-    <h3 style="margin-right: 520px;">My Previous Rentals</h3>
-
-    <table id="rentals">
-        <tr>
-            <th>Book</th>
-            <th></th>
-            <th style="margin-left: 15px;">Date Rented</th>
-            <th></th>
-        </tr>
-
-        <?php
-        foreach ($archived as $archivedRental) {
-            echo '
-           
-            <tr>
-            <td style="width: 80px;"><img src=" ' . $archivedRental['bookImage']. '" width="75px" height="112px"></td>
-            <td style=" vertical-align:top; ">'.$archivedRental['bookName'].'</td>
-            <td style="vertical-align:top; padding-left: 100px;">'.$archivedRental['startDate'].'</td>
-            <input type="hidden" name="rentalID" value="'.$archived['bookItemID'].'">
-           
-           
-            
-            </tr>
-          
-            
-            ';
-        }
-        ?>
-    </table>
-</div>
+    
+   </tr>
+   
+   ';}
 
 
-   </body>
+
+?>
+</table>
+<br><br><br>
+
+
+
+<table id="cartBooks" ">
+    <caption><h5 style="margin-left: auto;">Rental History</h5></caption>
+<?php
+foreach ($archived as $archivedrental) {
+
+    echo ' 
+   
+   <tr>
+   <td style="width: 80px;"><img src=" ' . $archivedrental['bookImage'] . '" width="75px" height="112px"></td>
+   <td style="vertical-align: top; padding-top: 5px;">' . $archivedrental['bookName'].'</td>
+   <td style="vertical-align: top; padding-top: 5px;">Rented on ' . $archivedrental['startDate'].'</td>
+  
+   </tr>
+   
+   ';}
+
+
+
+?>
+</table>
+
+
+
+
+</body>
+
+
+
+
 </html>
+
 

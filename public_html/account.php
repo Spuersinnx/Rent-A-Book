@@ -25,6 +25,7 @@ $states = $statementStates->fetchAll();
         <nav>
 
             <ul>
+                <li><a href="myRentals.php"> My Rentals </a></button></li>
                 <li><a href="memberPage.php"> Home </a></button></li>
                 <li>
                     <form id="logout" action="logout.php" method="post" style="cursor: pointer"><a
@@ -59,10 +60,7 @@ $states = $statementStates->fetchAll();
 
        </tr>
 
-        <tr>
-            <td>Email:</td>
-            <td><input type="text" name="userEmail" value="<?php echo $_SESSION['userEmail'][0]?> "></td>
-        </tr>
+
         <tr>
 
         </tr>
@@ -119,9 +117,11 @@ $states = $statementStates->fetchAll();
     </table>
 </div>
 <?php
-foreach ($_SESSION['accountError'] as $sessionError) {
-    echo '<p style="color: red; margin-left: 180px;"> '.$sessionError.'</p>';
-}
+
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['nameError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['lNameError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cardError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cardDateError'].'</p>';
 
 ?>
 <button type="submit" class="cartDeleteButton" name="checkOut" style="background-color: #02b8dd; margin-left: 180px; padding: 14px 30px; ">Save</button>

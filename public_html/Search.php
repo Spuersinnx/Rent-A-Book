@@ -27,7 +27,7 @@ $genres = $genreSelect->fetchAll();
     <form id="search-form" action="../db/db_search.php" method="post">
 
 
-        <input type="text" placeholder="Search by ISBN, author, or title" name="userSearch" value="<?= $userSearch ?>" required style="font-size: large; width: 50%; margin-left: 350px;">
+        <input type="text" placeholder="Search by ISBN, author, or title" name="userSearch" value="<?= $userSearch ?>" required style="font-size: large; width: 50%; margin-left: 24%;">
         <select name="genreFilter">
             <option value="<?=null?>" selected="selected">None</option>
             <?php foreach($genres as $genre) : ?>
@@ -36,7 +36,7 @@ $genres = $genreSelect->fetchAll();
         </select></label><br />
 
 
-        <button type="submit" id="search-button" class="searchButton" style="margin-left: 520px;">Search</button>
+        <button type="submit" id="search-button" class="searchButton" style="margin-left: 36%;">Search</button>
     </form>
 
 </div>
