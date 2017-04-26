@@ -4,16 +4,18 @@ require_once('../db/db_config.php');
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $creditCard = $_POST['cardNumber'];
+$cardName = $_POST['cardName'];
 $cardDate = $_POST['cardDate'];
 $state = $_POST['state'];
-$stateID = $_POST['stateID'];
 $city = $_POST['city'];
+$address = $_POST['address'];
 
 $_SESSION['accountError'] = array();
 
-$queryRecords = "SELECT * FROM address JOIN city on city.cityID = address.cityID JOIN state on state.stateID = address.stateID WHERE address.personID = '". $_SESSION['personID']."'";
+$queryRecords = "SELECT * FROM address WHERE address.personID = '". $_SESSION['personID']."'";
 $statementRecords = $db->prepare($queryRecords);
-$records = $statementRecords->fetch();
+$statementRecords->execute();
+$records = $statementRecords->fetchAll();
 
 if(count($records) > 0) {
     if (empty($firstName)) {
@@ -77,17 +79,45 @@ if(count($records) > 0) {
 }
 
 else {
-    $queryAddress = 'UPDATE state SET stateName = :stateName';
-    $statementAddress = $db->prepare($queryAddress);
-    $statementAddress->bindValue(':stateName', $state);
-    $statementAddress->execute();
 
-    $queryAddress2 = 'INSERT INTO city (cityName, stateID) VALUES(:cityName, :stateID)';
+    $queryCard = "INSERT INTO card(cardName, cardNumber, cardDate, userID) VALUES(:cardName, :cardNumber, :cardDate, '" . $_SESSION['userID'] . "') ";
+    $statementCard = $db->prepare($queryCard);
+    $statementCard->bindValue(':cardName', $cardName);
+    $statementCard->bindValue(':cardNumber', $creditCard);
+    $statementCard->bindValue(':cardDate', $cardDate);
+    $statementCard->execute();
+
+    $_SESSION['cardDate'] = $_POST['cardDate'];
+    $_SESSION['cardNumber'] = $_POST['cardNumber'];
+    $_SESSION['cardName'] = $_POST['cardName'];
+
+    $queryAddress2 = 'INSERT INTO city(cityName, stateID) VALUES(:cityName, (SELECT stateID from state where stateName =:stateName))';
     $statementAddress2 = $db->prepare($queryAddress2);
-    $statementAddress2->bindValue(':cityName',$city);
-    $statementAddress2->bindValue(':stateID', $stateID);
+    $statementAddress2->bindValue(':cityName', $city);
+    $statementAddress2->bindValue(':stateName', $state);
+    $statementAddress2->execute();
 
-    $queryAddress3 = 'INSERT INTO address(personID, address, cityID, stateID) VALUES()';
+    $_SESSION['cityName'] = $_POST['city'];
+    $_SESSION['stateName'] = $_POST['state'];
+
+
+    $queryStateID = "SELECT stateID from state WHERE stateName = '" . $_SESSION['state'] . "'";
+    $statementID = $db->prepare($queryStateID);
+    $stateID = $statementID->execute();
+
+    $queryAddress3 = "INSERT INTO address(personID, address, cityID, stateID) VALUES('" . $_SESSION['personID'] . "', :address,(SELECT cityID from city WHERE cityName =:cityName) , (SELECT stateID FROM state WHERE stateName = :stateName) )";
+    $statementAddress3 = $db->prepare($queryAddress3);
+    $statementAddress3->bindValue(':cityName', $city);
+    $statementAddress3->bindValue(':address',$address );
+    $statementAddress3->bindValue(':stateName', $state);
+    $statementAddress3->execute();
+
+
+    $_SESSION['address'] = $_POST['address'];
+
+
+
+
 }
 
 

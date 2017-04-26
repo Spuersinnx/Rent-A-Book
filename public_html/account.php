@@ -112,11 +112,14 @@ $_SESSION['cardDateError'] = (isset($_SESSION['cardDateError']) ? $_SESSION['car
                     ';
                 }
                 else {
-                    echo '<option>'.$state['stateName'].'</option>
-                    <input type="hidden" name="stateID" value="'.$state['stateID'].'">
+                    echo '<option value="'.$state['stateName'].'">'.$state['stateName'].'</option>
+                   
                     ';
                 }
+
+
             }
+
 
             ?>
             </select>
