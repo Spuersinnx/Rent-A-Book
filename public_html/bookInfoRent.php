@@ -12,6 +12,9 @@ $bookInfo = $statementBookID->fetch();
 
 $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 
+#Check subTotal
+$_SESSION['subTotal'] = (isset($_SESSION['subTotal']) ? $_SESSION['subTotal'] : 0);
+
 //if user clicked rent
 if(isset($_POST['rent'])) {
 
@@ -44,6 +47,10 @@ if(isset($_POST['rent'])) {
 
 //cart size
 $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
+
+
+#Check if Error variable is set
+$cartError = (isset($cartError) ? $cartError : null);
 
 
 ?>

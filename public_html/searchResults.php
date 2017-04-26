@@ -2,6 +2,17 @@
 session_start();
 $userResults = $_SESSION['userResults'];
 
+if($userResults == null){
+
+    $message = "No results were found that matched your search...";
+
+}else{
+    $message = null;
+
+}
+
+#Check if cartSize variable Exists
+$cartSize = (isset($_SESSION['cartSize']) ? $_SESSION['cartSize'] : 0);
 
 ?>
 <html xmlns="http://www.w3.org/1999/html">
@@ -30,9 +41,11 @@ $userResults = $_SESSION['userResults'];
 <hr>
 
 <form method="post" action="viewCart.php">
-    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize']; ?> Items <input
+    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $cartSize; ?> Items <input
                 type="image" title="View Cart" src="img/content/cart.png"></h6>
 </form>
+            <!-- If userSearch has no results this message will display -->
+            <span style="padding-left: 25%;"><b><?=$message?></b></span>
 
 <table class="genreBooks">
 

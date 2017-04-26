@@ -9,6 +9,13 @@ if (isset($_SESSION['lastName'])) {
     $lastName = $_SESSION['lastName'];
 }
 
+if(isset($_SESSION['userSearch'])){
+
+    $userSearch = $_SESSION['userSearch'];
+}else{
+    $userSearch = null;
+}
+
 $queryGenres = 'SELECT * FROM genre';
 $statementGenre = $db->prepare($queryGenres);
 $statementGenre->execute();
