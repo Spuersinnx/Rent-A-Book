@@ -47,5 +47,6 @@ $insertAuthorQuery->execute(array(
 ));
 
 
+//$insertBookItemQuery = "INSERT INTO bookItem (supplier, available, bookID) VALUES(:supplier, :available, (SELECT bookID ))";
 header('Location:adminPage.php');
 exit();

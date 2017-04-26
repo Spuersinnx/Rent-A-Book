@@ -66,7 +66,7 @@ foreach ($bookEntry as $book) {
     <form action="adminBookInfo.php" method="post">
     <input type="hidden" name="bookID" value="'.$book['bookID'].'">
     <input type="hidden" name="genreID" value="'.$book['genreID'].'">
-    <td><button type="submit" class="cartDeleteButton" name="update" >Update</button></td>
+    <td><button type="submit" class="cartDeleteButton" name="update" style="background-color:#02b8dd ">Update</button></td>
      </form>
      
      <form action="adminDeleteB.php" method="post">
@@ -80,10 +80,11 @@ foreach ($bookEntry as $book) {
 
 ?>
 
-</table> <br />
-
-<a href="adminNewBook_Form.php">Add New Book</a>
+</table> <br/>
 
 
+<form action='adminNewBook_Form.php' method="post">
+    <button type="submit" class="cartDeleteButton" name="add" style="margin-left: 78.5%; background-color: #02b8dd;">Add New Book</button>
+</form>
 </body>
 </html>

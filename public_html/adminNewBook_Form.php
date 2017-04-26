@@ -45,13 +45,13 @@ $genres = $genreSelect->fetchAll();
 <form action="adminBook_Insert.php" method="post">
     <div id="bookInfo" style="margin-bottom: 0%; margin-left: 15%">
         <h5>Book Name:</h5>
-        <input name="bookName" type="text" style="width: 40%; margin-left: 15%;">
+        <input name="bookName" type="text" style="width: 40%; margin-left: 20%;">
 
-        <h5>by</h5><input name="authorName" type="text" style="width: 40%; margin-left: 15%;"> <br/>
+        <h5>by</h5><input name="authorName" type="text" style="width: 40%; margin-left: 20%;"> <br/>
 
-        <h5>ISBN:</h5><input name="bookISBN" type="text" style="width: 40%; margin-left: 15%;">
+        <h5>ISBN:</h5><input name="bookISBN" type="text" style="width: 40%; margin-left: 20%;">
 
-        <h5>Genre:</h5><select name="genreID" style="margin-left: 16%;">
+        <h5>Genre:</h5><select name="genreID" style="margin-left: 20%;">
             <?php foreach ($genres as $genre) : ?>
                 <?php if ($genre['genreID'] == $genreID) : ?>
                     <option selected="selected" value="<?= $genre['genreID'] ?>"><?= $genre['genreName'] ?></option>
@@ -61,13 +61,13 @@ $genres = $genreSelect->fetchAll();
         </select><br/><br />
 
         <h5>BookImage URL:</h5>
-        <input name="bookImage" type="text" style="width: 40%; margin-left: 15%;">
+        <input name="bookImage" type="text" style="width: 40%; margin-left: 20%;">
 
     </div>
 
 
-    <h5 style="margin-left: 32%">Description</h5>
-    <textarea name="bookDescription" cols="65" rows="5"
+    <h5 style="margin-left: 33%">Description: </h5>
+    <textarea name="bookDescription" cols="66" rows="5"
               style="margin-left: 32%; margin-top: 0px;">Enter Book Description here</textarea>
     <br/>
 
