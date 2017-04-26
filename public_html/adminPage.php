@@ -8,6 +8,12 @@ $statementBooks->execute();
 $bookEntry = $statementBooks->fetchAll();
 
 
+$queryUserInfo = $db->prepare("SELECT userinfo.firstName, userinfo.lastName, userinfo.userID, userinfo.personID, users.userPassword, users.userEmail
+                  FROM userinfo INNER JOIN users ON (userinfo.userID = users.userID)");
+$queryUserInfo->execute();
+$users = $queryUserInfo->fetchAll();
+
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -31,6 +37,10 @@ $bookEntry = $statementBooks->fetchAll();
     </div>
 </header>
 
+<h3><b>Administrator Dashboard</b></h3>
+<br />
+
+<h2>Manage Books</h2>
 
 <table class="admin1">
     <tr>
@@ -56,6 +66,7 @@ foreach ($bookEntry as $book) {
     
     <form action="adminBookInfo.php" method="post">
     <input type="hidden" name="bookID" value="'.$book['bookID'].'">
+    <input type="hidden" name="genreID" value="'.$book['genreID'].'">
     <td><button type="submit" class="cartDeleteButton" name="update" >Update</button></td>
      </form>
      
@@ -66,14 +77,16 @@ foreach ($bookEntry as $book) {
      
     </tr>';
     
-    
+
     
 
 }
 
 
 ?>
+
 </table>
+
 
 </body>
 </html>
