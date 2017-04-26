@@ -75,16 +75,14 @@ foreach ($bookEntry as $book) {
      </form>
      
     </tr>';
-    
-
-    
 
 }
 
-
 ?>
 
-</table>
+</table> <br />
+
+<a href="adminNewBook_Form.php">Add New Book</a>
 
 
 </body>
