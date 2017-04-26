@@ -87,7 +87,7 @@ $_SESSION['cityError'] = (isset($_SESSION['cityError']) ? $_SESSION['cityError']
                 <td>Credit Card Number: </td>
                 <td><input type="text" name="cardNumber" value="<?php echo $_SESSION['cardNumber'];?>"></td>
                 <td>Expiration Date: </td>
-                <td><input type="text" name="cardDate" value="<?php echo $_SESSION['cardDate'];?>"></td>
+                <td><input type="text" name="cardDate" placeholder="MM/YY" value="<?php echo $_SESSION['cardDate'];?>"></td>
 
             </tr>
 

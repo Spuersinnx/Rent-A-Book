@@ -96,13 +96,13 @@ $cartError = (isset($cartError) ? $cartError : null);
     <h4 style="margin-right: 80px;"><?php echo $bookInfo['bookName']?></h4>
     <h5>by <?php echo $bookInfo['authorName']?></h5>
     <p> <?php echo nl2br($bookInfo['bookDescription'])?></p>
-    <form action="" method="post">
-        <button type="submit" class="rentButton" name="rent">Rent</button>
-    </form>
+
     <?php echo '<p style="color: red"> '.$cartError.'</p>';?>
 
 </div>
-
+<form action="" method="post">
+    <button type="submit" class="rentButton" name="rent">Rent</button>
+</form>
 
 
 
