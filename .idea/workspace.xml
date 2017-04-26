@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b8490a-ad59-4282-8c8e-30c1fd09c06f" name="Default" comment="Added CSS for login box (login, cancel buttons and X button design)&#10;Added functionality for cancel and login buttons to exit out of login prompt">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/adminBook_Insert.php" afterPath="$PROJECT_DIR$/public_html/adminBook_Insert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/adminDeleteB.php" afterPath="$PROJECT_DIR$/public_html/adminDeleteB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/adminNewBook_Form.php" afterPath="$PROJECT_DIR$/public_html/adminNewBook_Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/adminPage.php" afterPath="$PROJECT_DIR$/public_html/adminPage.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,20 +45,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminDeleteB.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public_html/adminDeleteB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-              <folding>
-                <marker date="1493228800000" expanded="true" signature="106:147" ph="DELETE FROM " />
-                <marker date="1493228800000" expanded="true" signature="293:333" ph="DELETE FROM " />
-                <marker date="1493228800000" expanded="true" signature="483:526" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="adminNewBook_Form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/adminNewBook_Form.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,17 +65,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminBook_Insert.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminBook_Insert.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/adminBook_Insert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="49" column="2" lean-forward="false" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+            <state relative-caret-position="441">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
-                <marker date="1493227216000" expanded="true" signature="376:529" ph="INSERT INTO books... " />
-                <marker date="1493227216000" expanded="true" signature="755:884" ph="SELECT bookI... books" />
-                <marker date="1493227216000" expanded="true" signature="1060:1173" ph="INSERT INTO author... " />
-                <marker date="1493227216000" expanded="true" signature="1309:1407" ph="INSERT INTO bookItem... " />
-                <marker date="1493227216000" expanded="true" signature="1391:1404" ph="SELECT bookI... " />
+                <marker date="1493231804000" expanded="true" signature="376:529" ph="INSERT INTO books... " />
+                <marker date="1493231804000" expanded="true" signature="755:884" ph="SELECT bookI... books" />
+                <marker date="1493231804000" expanded="true" signature="1060:1173" ph="INSERT INTO author... " />
+                <marker date="1493231804000" expanded="true" signature="1350:1439" ph="INSERT INTO bookItem... " />
               </folding>
             </state>
           </provider>
@@ -139,8 +120,8 @@
       <file leaf-file-name="getAccount.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/getAccount.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-984">
-              <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="426">
+              <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding>
                 <marker date="1493214031000" expanded="true" signature="362:408" ph="SELECT * FRO... address" />
                 <marker date="1493214031000" expanded="true" signature="362:436" ph="SELECT * FRO... address" />
@@ -277,8 +258,8 @@
         <option value="$PROJECT_DIR$/public_html/getAccount.php" />
         <option value="$PROJECT_DIR$/public_html/adminPage.php" />
         <option value="$PROJECT_DIR$/public_html/adminNewBook_Form.php" />
-        <option value="$PROJECT_DIR$/public_html/adminBook_Insert.php" />
         <option value="$PROJECT_DIR$/public_html/adminDeleteB.php" />
+        <option value="$PROJECT_DIR$/public_html/adminBook_Insert.php" />
       </list>
     </option>
   </component>
@@ -290,9 +271,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="549" />
+    <option name="x" value="299" />
     <option name="y" value="22" />
-    <option name="width" value="891" />
+    <option name="width" value="1141" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectView">
@@ -513,7 +494,7 @@
       <workItem from="1492450397124" duration="25810000" />
       <workItem from="1492707075884" duration="60558000" />
       <workItem from="1493128351847" duration="14566000" />
-      <workItem from="1493170132918" duration="15843000" />
+      <workItem from="1493170132918" duration="17631000" />
     </task>
     <task id="LOCAL-00001" summary="Added CSS for login box (login, cancel buttons and X button design)&#10;Added functionality for cancel and login buttons to exit out of login prompt">
       <created>1489021083129</created>
@@ -526,13 +507,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308693000" />
+    <option name="totallyTimeSpent" value="310481000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="549" y="22" width="891" height="873" extended-state="0" />
+    <frame x="299" y="22" width="1141" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30864197" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16564417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.50389105" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1033,10 +1014,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="306" column="11" lean-forward="false" selection-start-line="306" selection-start-column="6" selection-end-line="306" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/adminUpdateB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1493186592000" expanded="true" signature="312:648" ph="UPDATE books... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/adminDeleteB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <marker date="1493228800000" expanded="true" signature="106:147" ph="DELETE FROM " />
+            <marker date="1493228800000" expanded="true" signature="293:333" ph="DELETE FROM " />
+            <marker date="1493228800000" expanded="true" signature="483:526" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/adminPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1493218849000" expanded="true" signature="80:199" ph="SELECT * FRO... books" />
+            <marker date="1493218849000" expanded="true" signature="353:555" ph="SELECT useri... userinfo" />
+            <marker date="1493218849000" expanded="true" signature="1496:2290" ph="..." />
+            <marker date="1493218849000" expanded="true" signature="1767:2042" ph="..." />
+            <marker date="1493218849000" expanded="true" signature="1983:2008" ph="..." />
+            <marker date="1493218849000" expanded="true" signature="2100:2274" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/adminNewBook_Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1493219057000" expanded="true" signature="170:227" ph="SELECT * FRO... genre" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/getAccount.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-984">
-          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="426">
+          <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding>
             <marker date="1493214031000" expanded="true" signature="362:408" ph="SELECT * FRO... address" />
             <marker date="1493214031000" expanded="true" signature="362:436" ph="SELECT * FRO... address" />
@@ -1067,80 +1112,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="306" column="11" lean-forward="false" selection-start-line="306" selection-start-column="6" selection-end-line="306" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/adminUpdateB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1493186592000" expanded="true" signature="312:648" ph="UPDATE books... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/adminNewBook_Form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1493219057000" expanded="true" signature="170:227" ph="SELECT * FRO... genre" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/adminPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1493218849000" expanded="true" signature="80:199" ph="SELECT * FRO... books" />
-            <marker date="1493218849000" expanded="true" signature="353:555" ph="SELECT useri... userinfo" />
-            <marker date="1493218849000" expanded="true" signature="1496:2290" ph="..." />
-            <marker date="1493218849000" expanded="true" signature="1767:2042" ph="..." />
-            <marker date="1493218849000" expanded="true" signature="1983:2008" ph="..." />
-            <marker date="1493218849000" expanded="true" signature="2100:2274" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/adminBook_Insert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="49" column="2" lean-forward="false" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+        <state relative-caret-position="441">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <marker date="1493227216000" expanded="true" signature="376:529" ph="INSERT INTO books... " />
-            <marker date="1493227216000" expanded="true" signature="755:884" ph="SELECT bookI... books" />
-            <marker date="1493227216000" expanded="true" signature="1060:1173" ph="INSERT INTO author... " />
-            <marker date="1493227216000" expanded="true" signature="1309:1407" ph="INSERT INTO bookItem... " />
-            <marker date="1493227216000" expanded="true" signature="1391:1404" ph="SELECT bookI... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/adminDeleteB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding>
-            <marker date="1493228800000" expanded="true" signature="106:147" ph="DELETE FROM " />
-            <marker date="1493228800000" expanded="true" signature="293:333" ph="DELETE FROM " />
-            <marker date="1493228800000" expanded="true" signature="483:526" ph="DELETE FROM " />
+            <marker date="1493231804000" expanded="true" signature="376:529" ph="INSERT INTO books... " />
+            <marker date="1493231804000" expanded="true" signature="755:884" ph="SELECT bookI... books" />
+            <marker date="1493231804000" expanded="true" signature="1060:1173" ph="INSERT INTO author... " />
+            <marker date="1493231804000" expanded="true" signature="1350:1439" ph="INSERT INTO bookItem... " />
           </folding>
         </state>
       </provider>

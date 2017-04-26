@@ -46,7 +46,16 @@ $insertAuthorQuery->execute(array(
     ":bookID" => $authorBookID
 ));
 
+$supplier = 'default';
+$available = 'yes';
 
-//$insertBookItemQuery = "INSERT INTO bookItem (supplier, available, bookID) VALUES(:supplier, :available, (SELECT bookID ))";
+$insertBookItemQuery = "INSERT INTO bookItem (supplier, available, bookID) VALUES(:supplier, :available, :bookID)";
+$statementInsert = $db->prepare($insertBookItemQuery);
+$statementInsert->bindValue(':supplier', $supplier);
+$statementInsert->bindValue(':available',$available );
+$statementInsert->bindValue(':bookID', $authorBookID);
+$statementInsert->execute();
+
+
 header('Location:adminPage.php');
 exit();
