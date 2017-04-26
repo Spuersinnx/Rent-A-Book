@@ -101,10 +101,13 @@ $states = $statementStates->fetchAll();
                 if ($state['stateName'] == $_SESSION['stateName']) {
                     echo '
                     <option selected="selected">'.$_SESSION['stateName'].'</option>
+                   
                     ';
                 }
                 else {
-                    echo '<option>'.$state['stateName'].'</option>';
+                    echo '<option>'.$state['stateName'].'</option>
+                    <input type="hidden" name="stateID" value="'.$state['stateID'].'">
+                    ';
                 }
             }
 

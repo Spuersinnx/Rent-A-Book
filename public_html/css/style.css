@@ -304,6 +304,20 @@ tr.browseBooks {
     padding-bottom: 30px;
 }
 
+table.admin1 {
+align-self: center;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+table.admin1 td {
+    padding-bottom: 5px;
+}
+table.admin1 th{
+    text-align: left;
+
+}
 
 table.genreBooks {
     align-items: center;
@@ -313,13 +327,13 @@ table.genreBooks {
     border: none;
 }
 
-tr.genreBooks {
+table.genreBooks tr{
     padding: 10px;
 
 }
 
 
-th.genreBooks{
+table.genreBooks th{
     padding: 10px;
     border-collapse: collapse;
 }
@@ -331,6 +345,7 @@ table#cartBooks {
     width: 50%;
     float: left;
 }
+
 #cartBooks td {
     border-bottom: 1px solid dimgrey;
 
@@ -354,10 +369,6 @@ table#rentals{
 
     margin-top: 0px;
     margin-left: 280px;
-}
-
-#table td {
-    padding: 20px;
 }
 
 

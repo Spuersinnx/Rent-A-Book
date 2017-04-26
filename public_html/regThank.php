@@ -22,13 +22,13 @@ header('Refresh: 5; http://localhost:8888/Rent-A-Book/public_html/index.php');
 <div class="wrapper">
 
 <div class="message">
-<h4 style="margin-left: 220px;">Thank You For Joining Rent a Book</h4>
+<h4 style="margin-left: 24%;">Thank You For Joining Rent a Book</h4>
 </div>
 </div>
 </header>
 
 
-<p style="margin-left: 660px;">You will now be redirected to our homepage to login</p>
+<p style="margin-left: 36%;">You will now be redirected to our homepage to login</p>
 
 
 
