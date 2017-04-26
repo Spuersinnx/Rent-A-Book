@@ -23,3 +23,8 @@ require_once ('../db/db_config.php');
     </div>
 </header>
 
+<h3><b>Administrator Control Panel</b></h3>
+<hr>
+
+
+
