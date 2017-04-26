@@ -40,7 +40,6 @@ $users = $queryUserInfo->fetchAll();
 <h3><b>Administrator Dashboard</b></h3>
 <br />
 
-<h2>Manage Books</h2>
 
 <table class="admin1">
     <tr>

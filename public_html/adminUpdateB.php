@@ -21,18 +21,19 @@ $updateQuery = $db->prepare("UPDATE books
             bookImage = :bookImage,
             bookDescription = :bookDescription
              
-        WHERE bookID = :bookID;");
+        WHERE books.bookID = :bookID;");
 
 $updateQuery->execute(array(
-    ":bookName" => $bookID,
+    ":bookName" => $bookName,
     ":authorName" => $authorName,
     ":genreID" => $genreID,
     ":ISBN"  => $ISBN,
     ":bookImage" => $bookImage,
-    ":bookDescription" => $bookDescription
+    ":bookDescription" => $bookDescription,
+    ":bookID" => $bookID
 ));
 
-include("adminPage.php");
+header("Location: adminPage.php");
 
 
 
