@@ -10,8 +10,11 @@ $states = $statementStates->fetchAll();
 #Check if error variables are set
 $_SESSION['nameError'] = (isset($_SESSION['nameError']) ? $_SESSION['nameError'] : null);
 $_SESSION['lNameError'] = (isset($_SESSION['lNameError']) ? $_SESSION['lNameError'] : null);
+$_SESSION['cardNameError'] = (isset($_SESSION['cardNameError']) ? $_SESSION['cardNameError'] : null);
 $_SESSION['cardError'] = (isset($_SESSION['cardError']) ? $_SESSION['cardError'] : null);
 $_SESSION['cardDateError'] = (isset($_SESSION['cardDateError']) ? $_SESSION['cardDateError'] : null);
+$_SESSION['addressError'] = (isset($_SESSION['addressError']) ? $_SESSION['addressError'] : null);
+$_SESSION['cityError'] = (isset($_SESSION['cityError']) ? $_SESSION['cityError'] : null);
 
 ?>
 
@@ -133,8 +136,11 @@ $_SESSION['cardDateError'] = (isset($_SESSION['cardDateError']) ? $_SESSION['car
 
 echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['nameError'].'</p>';
 echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['lNameError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cardNameError'].'</p>';
 echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cardError'].'</p>';
 echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cardDateError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['addressError'].'</p>';
+echo '<p style="color: red; margin-left: 180px;"> '.$_SESSION['cityError'].'</p>';
 
 ?>
 <button type="submit" class="cartDeleteButton" name="checkOut" style="background-color: #02b8dd; margin-left: 180px; padding: 14px 30px; ">Save</button>

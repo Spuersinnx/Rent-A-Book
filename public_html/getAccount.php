@@ -47,6 +47,24 @@ if(count($records) > 0) {
         $_SESSION['lastName'] = $_POST['lastName'];
     }
 
+    if(empty($cardName)){
+        $_SESSION['cardName'] = $_POST['cardName'];
+        $_SESSION['cardNameError'] = "Please add your Card Name";
+
+
+    }else{
+        unset($_SESSION['cardNameError']);
+        $queryCardName = $db->prepare("UPDATE card
+                                                SET cardName = :cardName
+                                                WHERE userID = '" . $_SESSION['userID'] . "'");
+        $queryCardName->execute(array(
+            ":cardName" => $cardName
+        ));
+        $_SESSION['cardName'] = $_POST['cardName'];
+
+
+    }
+
     if(empty($creditCard) || strlen($creditCard) < 15) {
         $_SESSION['cardNumber'] = $_POST['cardNumber'];
         $_SESSION['cardError'] = 'Please fill out your credit card number';
@@ -75,6 +93,43 @@ if(count($records) > 0) {
         $statementName->bindValue(':cardDate', $cardDate);
         $statementName->execute();
         $_SESSION['cardDate'] = $_POST['cardDate'];
+    }
+
+    if(empty($address)){
+
+        $_SESSION['address'] = $_POST['address'];
+        $_SESSION['addressError'] = 'Please add your Address';
+
+    }else{
+
+        unset($_SESSION['addressError']);
+        $queryAddress = $db->prepare("UPDATE address 
+                                               SET address = :address
+                                               WHERE personID = '" . $_SESSION['personID'] . "'");
+        $queryAddress->execute(array(
+            ":address" => $address
+        ));
+        $_SESSION['address'] = $address;
+
+    }
+
+    if(empty($city)){
+        $_SESSION['cityName'] = $_POST['city'];
+        $_SESSION['cityError'] = 'Please add your City';
+
+    }else{
+
+        unset($_SESSION['cityError']);
+        $queryCity = $db->prepare("UPDATE city c
+                                            INNER JOIN address a ON c.cityID = a.cityID
+                                            SET c.cityName = :city 
+                                            WHERE a.personID = '" . $_SESSION['personID'] . "'");
+        $queryCity->execute(array(
+            ":city" => $city
+        ));
+        $_SESSION['cityName'] = $city;
+
+
     }
 }
 
