@@ -10,7 +10,15 @@ $statementGenre->bindValue(':genreID', $getGenre);
 $statementGenre->execute();
 $genreBooks = $statementGenre->fetchAll();
 
-$_SESSION['cartSize'] = sizeof($_SESSION['cart']);
+#Check cart
+$cart = (isset($_SESSION['cart']) ? $_SESSION['cart'] : null);
+
+$_SESSION['cartSize'] = sizeof($cart);
+
+#Check cartSize
+$cartSize = (isset($_SESSION['cartSize']) ? $_SESSION['cartSize'] : 0);
+
+#$_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 
 ?>
 
@@ -40,7 +48,7 @@ $_SESSION['cartSize'] = sizeof($_SESSION['cart']);
 <hr>
 
 <form method="post" action="viewCart.php">
-    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $_SESSION['cartSize'];?> Items <input type="image" title="View Cart" src="img/content/cart.png"></h6>
+    <h6 align="right" style="margin-right: 200px; font-size: medium;"><?php echo $cartSize;?> Items <input type="image" title="View Cart" src="img/content/cart.png"></h6>
 </form>
 
 <table class="genreBooks">
